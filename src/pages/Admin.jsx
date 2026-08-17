@@ -28,7 +28,7 @@ export default function AdminPage() {
     setLoginError('')
     const success = login(usernameInput, passwordInput)
     if (!success) {
-      setLoginError('Invalid username or password. Use admin / admin.')
+      setLoginError('Invalid credentials. Access is restricted to authorized mortgage administrators.')
     }
   }
 
@@ -76,7 +76,7 @@ export default function AdminPage() {
                 required
                 value={usernameInput}
                 onChange={(e) => setUsernameInput(e.target.value)}
-                placeholder="admin"
+                placeholder="Enter username"
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-amber-500"
               />
             </div>
@@ -90,7 +90,7 @@ export default function AdminPage() {
                 required
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
-                placeholder="admin"
+                placeholder="••••••••"
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-amber-500"
               />
             </div>

@@ -76,8 +76,7 @@ Visit **`http://localhost:5173`** in your browser.
 
 ### Admin Dashboard Access
 1. Navigate to **`http://localhost:5173/admin`**
-2. **Username:** `admin`
-3. **Password:** `admin`
+2. Authenticate using authorized administrative credentials.
 
 ---
 

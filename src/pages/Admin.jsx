@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
 import { useMortgagesContext } from '../context/MortgagesContext'
+import SEO from '../components/SEO'
 
 export default function AdminPage() {
   const {
@@ -49,6 +50,7 @@ export default function AdminPage() {
   if (!isAdminLoggedIn) {
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center px-4 py-12">
+        <SEO title="Admin Portal" noIndex={true} canonicalUrl="/admin" />
         <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 p-8 sm:p-10">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 text-amber-400 mb-4 shadow-lg">

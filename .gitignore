@@ -7,23 +7,46 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies & Build output
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Environment variables & API Secrets
+.env
+.env.local
+.env.*.local
+
+# Editor directories and OS clutter
 .vscode/*
 !.vscode/extensions.json
 .idea
 .ds_store
+.DS_Store
+Thumbs.db
+desktop.ini
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+# AI Assistant, Prompts, Instructions & Private Notes
+.gemini/
+.cursor/
+.windsurf/
+.antigravity/
+.ai/
+prompts/
+instructions/
+private/
+notes/
+drafts/
+scratch/
+*.draft.md
+*.private.*
+*prompt*
+*instruction*
+*.pdf
+*.docx

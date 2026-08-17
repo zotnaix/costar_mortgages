@@ -1,5 +1,18 @@
 User-agent: *
+# Disallow sensitive internal management & login paths
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+
+# Allow all public crawling and essential rendering assets (JS, CSS, Images, Videos)
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.mp4$
 
+# Absolute path to XML Sitemap
 Sitemap: https://costarmortgages.com/sitemap.xml
-

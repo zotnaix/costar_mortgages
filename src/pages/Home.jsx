@@ -5,6 +5,8 @@ import { loanPrograms } from '../data/mortgages'
 import { blogPosts } from '../data/blogPosts'
 import MortgageCalculatorWidget from '../components/MortgageCalculatorWidget'
 import { useMortgagesContext } from '../context/MortgagesContext'
+import SEO from '../components/SEO'
+import { getBrokerageSchema } from '../config/schemas'
 
 export default function Home() {
   const { submitLead } = useMortgagesContext()
@@ -31,7 +33,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      {/* HERO SECTION WITH 50/50 SPLIT FOR CALCULATOR */}
+      <SEO 
+        title="Denver & Highlands Ranch Mortgage Broker"
+        description="Explore Colorado mortgage options with licensed broker Sathya R Narayan (NMLS #2042475). Conventional, FHA, VA, Jumbo loans, and refinancing."
+        canonicalUrl="/"
+        schema={getBrokerageSchema()}
+      />
+      {/* HERO SECTION WITH 40/60 SPLIT FOR CALCULATOR */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-slate-950 text-white overflow-hidden pt-24 pb-16">
         {/* Subtle Background Glows */}
         <div className="absolute top-1/4 left-10 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>

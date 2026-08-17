@@ -1,106 +1,130 @@
-# Co Star Mortgages Platform — Multi-Website Reusable Architecture
+# Co Star Mortgages Website
 
-Welcome to the **Co Star Mortgages Platform**. This codebase serves as a high-converting, modular mortgage origination platform. It is architected for maximum code reuse, modularity, and rapid deployment across lending verticals.
+Official web application for **Co Star Mortgages** — Licensed Mortgage Brokerage serving Denver, Highlands Ranch, and all of Colorado.
 
----
-
-## 📐 Platform Evaluation Audit
-
-| Phase | Primary Focus | Compliance Status | Implementation Strategy |
-| :--- | :--- | :--- | :--- |
-| **Website 1** | **Architecture** | ✅ **PASSED** | Core 4 Loan Programs library built with reusable components (`MortgageCalculatorWidget`, `MortgagePrograms`, `Footer`, `LicenseModal`). Centralized brand configuration via `siteConfig.js`. |
-| **Website 2** | **Reuse** | ✅ **READY** | 90%+ code reuse. Duplicate `siteConfig.js` and update brand assets. |
-| **Website 3** | **Speed** | ✅ **ACCELERATED** | Rapid delivery leveraging shared design tokens (`#0F172A` Slate Navy, `#D97706` Amber Gold), component architecture, and automated routing. |
-| **Website 4** | **Scalability** | ✅ **DOCUMENTED** | Fully documented setup, environment variables, CI/CD pipeline, and component extension guidelines. |
+- **Broker / Principal:** Sathya R Narayan
+- **NMLS Unique ID:** 2042475
+- **Equal Housing Lender**
 
 ---
 
-## 🛠️ Required Features Compliance Matrix
+## 🌟 Key Website Features (As of Today)
 
-### Technical Requirements
+### 1. Interactive Mortgage & PITI Calculator
+- **Real-Time Calculations:** Calculates Principal, Interest, Property Taxes, Homeowners Insurance, and Monthly HOA Dues in real time.
+- **Term Toggles:** Instant switching between **30-Year Fixed** and **15-Year Fixed** loans.
+- **Dynamic Payment Breakdown Bar:** Visual color-coded percentage distribution of your monthly payment.
+- **Responsive 40/60 Hero Split:** Generous desktop layout to ensure comfortable readability with zero text overlap.
 
-- ✅ **Mobile-Responsive Design**: Tested & optimized across **320px** (Mobile), **768px** (Tablet), and **1280px** (Desktop).
-- ✅ **Professional Branding**: Executive financial branding (`/logo.svg`, `/logo-white.svg`, deep slate navy `#0F172A`, warm gold `#D97706`, glassmorphic cards).
-- ✅ **SEO Fundamentals**: Meta tags (OpenGraph, Twitter Cards), `public/robots.txt`, `public/sitemap.xml`, and Schema.org JSON-LD (`MortgageBroker`).
-- ✅ **Analytics Event Tracking**: Pre-configured Google Analytics 4 (GA4) tracker (`src/lib/analytics.js`) capturing pre-approval leads, calculator usage, and quote requests.
+### 2. Core 6 Loan Programs
+Dedicated spec sheets, qualification requirements, pros/cons, and document checklists for:
+1. **Conventional Home Loans** — Classic fixed-rate financing for 620+ credit borrowers.
+2. **FHA Home Loans** — Government-backed loans with 3.5% down payment options.
+3. **VA Military Loans** — Exclusive 0% down payment and zero monthly PMI for veterans and active service members.
+4. **Jumbo & Non-Conforming Loans** — Luxury home financing exceeding county conforming limits.
+5. **Adjustable-Rate Mortgages (ARM)** — Lower initial introductory rates for 5–7 year plans.
+6. **Refinance & Cash-Out** — Rate reduction, term shortening, and home equity access.
 
-### Business Requirements
+### 3. Smart Navigation Bar with Dropdown
+- **Desktop Dropdown:** Hovering over *Loan Programs* displays instant links to all 6 loan types plus "View All Programs".
+- **Mobile Drawer:** Clean expandable sub-grid for seamless one-tap navigation on smartphones and tablets.
+- **Radiant Call-To-Action:** High-contrast, appealing gold-amber *Get Started* button.
 
-- ✅ **Contact & Lead Capture**: Digital Pre-Approval forms on `/`, `/refinance`, `/calculator`, and `/contact` with CRM webhook integration hooks in `siteConfig.js`.
-- ✅ **Interactive Calculators**: Real-time Payment (PITI) & Refinance Savings calculators with break-even timeline analysis.
-- ✅ **Third-Party Integrations**: Live Google Maps embeds, rate ticker benchmarks, and external portals.
-- ✅ **Production Deployment**: Automated CI/CD deployment configuration via Vercel / Netlify / GitHub Actions.
+### 4. Custom Rate Quote & Pre-Approval Forms
+- Fast digital inquiry forms on the Landing Page, Loan Program pages, Refinance portal, and Contact page.
+- Direct capture of borrower name, email, phone number, loan purpose, property value, and credit score tier.
 
----
+### 5. Admin CRM & Lead Management Portal (`/admin`)
+- **Status Pipeline Tracking:** Organize incoming borrower inquiries by status:
+  - ⏳ **Not Done Yet** (Awaiting initial review)
+  - 🔄 **In Progress** (Under review / client contacted)
+  - ✅ **Done** (Pre-approved / closed deal)
+- **Live Summary Metrics:** Top metric cards update in real time as leads are submitted or updated.
+- **Interactive Status Selectors:** Change any lead's status directly from the table dropdown.
+- **Filtering & Deletion:** One-click filtering by status (`All`, `Not Done`, `In Progress`, `Done`), per-lead deletion, and a **"Clear All Inquiries"** button for fresh testing.
 
-## 🚀 How to Clone & Deploy New Sites in 5 Minutes
+### 6. Refinance Hub & Educational FAQ
+- Refinance quotation form with interactive break-even timeline and cash-out equity guidance.
+- Concise, easy-to-read answers to the most common homeowner questions.
 
-To create a new website from this platform foundation:
+### 7. Introduction Video Showcase
+- Responsive widescreen (16:9) video player showcasing the official Co Star Mortgages introduction video in high definition without cropping.
 
-1. **Duplicate the Repository**:
-   ```bash
-   git clone <repo-url> website-2
-   cd website-2
-   ```
-
-2. **Update Brand & Config in `src/config/siteConfig.js`**:
-   ```javascript
-   export const siteConfig = {
-     brandName: "Brand Mortgages",
-     companyName: "Brand Mortgages Inc.",
-     tagline: "Smart Home Loans Made Simple",
-     logoDark: "/logo.svg",
-     logoWhite: "/logo-white.svg",
-     contact: {
-       email: "contact@brandmortgages.com",
-       phone: "(800) 555-0000",
-       address: "456 Skyline Blvd, Denver, CO",
-     }
-   };
-   ```
-
-3. **Install Dependencies & Start Dev**:
-   ```bash
-   npm install
-   npm run dev
-   ```
+### 8. Broker Profile & About Us
+- Profile overview of **Sathya R Narayan** highlighting 20+ years in Colorado real estate investing and 5+ years as a licensed mortgage broker.
+- Verified links to the official **BrokerNearMe** profile and contact channels.
 
 ---
 
-## 💻 Local Setup & Development
+## 💻 Running the Project Locally
 
-### Installation
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm
+
+### Installation & Launch
 
 ```bash
-# Install dependencies
+# 1. Install dependencies
 npm install
 
-# Start local development server
+# 2. Start local development server
 npm run dev
 ```
 
-The application will be live at `http://localhost:5173`.
+Visit **`http://localhost:5173`** in your browser.
 
-### Environment Variables (`.env`)
+### Admin Dashboard Access
+1. Navigate to **`http://localhost:5173/admin`**
+2. **Username:** `admin`
+3. **Password:** `admin`
 
-```env
-VITE_CRM_WEBHOOK_URL=https://your-crm-endpoint.com/lead
-VITE_GA4_TRACKING_ID=G-XXXXXXXXXX
+---
+
+## 📁 Project Structure
+
+```text
+costar_mortgages/
+├── public/
+│   ├── media/               # Profile photo, intro video, assets
+│   ├── logo.svg             # Primary dark logo
+│   └── logo-white.svg       # Inverted white logo
+├── src/
+│   ├── components/
+│   │   ├── Footer.jsx
+│   │   └── MortgageCalculatorWidget.jsx
+│   ├── config/
+│   │   └── siteConfig.js    # Broker contact info, NMLS, & site metadata
+│   ├── context/
+│   │   └── MortgagesContext.jsx # Lead state management & local database
+│   ├── data/
+│   │   ├── blogs.js         # Educational mortgage articles
+│   │   └── mortgages.js     # 6 Loan programs data & criteria
+│   ├── pages/
+│   │   ├── Home.jsx         # Landing page with hero calculator & video
+│   │   ├── MortgagePrograms.jsx # All loan programs catalogue & search
+│   │   ├── MortgageProgramDetail.jsx # Individual loan specs & docs
+│   │   ├── Refinance.jsx    # Refinance portal & FAQs
+│   │   ├── Services.jsx     # Mortgage origination services
+│   │   ├── About.jsx        # Sathya R Narayan broker profile
+│   │   ├── Contact.jsx      # Direct quote form & office location
+│   │   └── Admin.jsx        # Lead pipeline CRM dashboard
+│   ├── styles/
+│   │   └── index.css        # Vanilla CSS design tokens & navigation styles
+│   ├── App.jsx              # Main routing & header with dropdown
+│   └── main.jsx
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 📦 Build & Production CI/CD Deployment
+## 🚀 Production Build
 
-### Local Build
+To build the static production bundle:
 
 ```bash
 npm run build
 ```
 
-### Automated CI/CD Pipeline (Vercel / Netlify / GitHub Actions)
-
-1. Push your repository to GitHub.
-2. Connect your GitHub repository to **Vercel** or **Netlify**.
-3. Set build command: `npm run build`
-4. Set output directory: `dist`
+The compiled output will be generated inside the `dist/` folder, ready for deployment on **Vercel**, **Netlify**, or any static web host.

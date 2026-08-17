@@ -4,8 +4,8 @@
 export const siteConfig = {
   // Domain & Brand Identity
   domain: 'https://costarmortgages.com',
-  brandName: 'Co Star Mortgages',
-  companyName: 'Co Star Mortgages Inc.',
+  brandName: 'Co Star Mortgages LLC',
+  companyName: 'Co Star Mortgages LLC',
   brokerName: 'Sathya R Narayan',
   broker: {
     name: 'Sathya R Narayan',

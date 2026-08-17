@@ -23,9 +23,30 @@ export default function App(){
   const navClass = `site-nav${isHome ? '' : ' solid'}`
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
-  // Enforce tab name to Co Star Mortgages only across all pages
+  // Enforce tab name to start with "Co Star Mortgages LLC | " across all pages
   React.useEffect(() => {
-    document.title = "Co Star Mortgages"
+    const pageTitles = {
+      '/': 'Denver Home Loans & Refinancing',
+      '/mortgages': 'Mortgage Loan Programs',
+      '/mortgages/conventional-loans': 'Conventional Home Loans',
+      '/mortgages/fha-loans': 'FHA Home Loans',
+      '/mortgages/va-loans': 'VA Military Loans',
+      '/mortgages/jumbo-loans': 'Jumbo & Non-Conforming Loans',
+      '/mortgages/arm-loans': 'Adjustable-Rate Mortgages (ARM)',
+      '/mortgages/refinance-cashout': 'Refinance & Cash-Out Loans',
+      '/refinance': 'Refinance & Lower Your Rate',
+      '/calculator': 'Interactive Mortgage Calculator',
+      '/blog': 'Mortgage Blog & Guides',
+      '/services': 'Mortgage Advisory Services',
+      '/track-record': 'Recent Fundings & Track Record',
+      '/about': 'About Our Brokerage',
+      '/contact': 'Get Pre-Approved',
+      '/admin': 'Admin Portal'
+    }
+
+    const subTitle = pageTitles[location.pathname] || (location.pathname.startsWith('/mortgages/') ? 'Loan Program Details' : location.pathname.startsWith('/blog/') ? 'Mortgage Blog' : 'Home Loans')
+
+    document.title = `Co Star Mortgages LLC | ${subTitle}`
     setMobileOpen(false)
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   }, [location.pathname])

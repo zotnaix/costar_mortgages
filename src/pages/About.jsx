@@ -57,8 +57,12 @@ export default function AboutPage(){
           {/* Left Column: Broker Bio & Contact Details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-5">
-              <div className="w-20 h-20 rounded-3xl bg-slate-950 text-amber-400 font-black text-2xl flex items-center justify-center border-2 border-amber-500/30 shadow-lg shrink-0">
-                SN
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden bg-slate-950 border-2 border-amber-500/40 shadow-xl shrink-0 relative flex items-center justify-center">
+                <img 
+                  src="/media/profile_pic.jpg" 
+                  alt={siteConfig.brokerName}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div>
                 <h2 className="text-2xl font-black text-slate-900">{siteConfig.brokerName}</h2>

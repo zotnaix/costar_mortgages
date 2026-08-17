@@ -7,6 +7,7 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
   const [loanTermYears, setLoanTermYears] = useState(30)
   const [propertyTaxAnnual, setPropertyTaxAnnual] = useState(4500)
   const [homeInsuranceAnnual, setHomeInsuranceAnnual] = useState(1800)
+  const [hoaMonthly, setHoaMonthly] = useState(0)
 
   // Financial calculations
   const downPaymentAmount = Math.round((homePrice * downPercent) / 100)
@@ -26,13 +27,15 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
 
   const monthlyTax = Math.round(propertyTaxAnnual / 12)
   const monthlyInsurance = Math.round(homeInsuranceAnnual / 12)
-  const totalMonthlyPayment = Math.round(monthlyPrincipalInterest + monthlyTax + monthlyInsurance)
+  const monthlyHoa = Math.max(0, Math.round(Number(hoaMonthly) || 0))
+  const totalMonthlyPayment = Math.round(monthlyPrincipalInterest + monthlyTax + monthlyInsurance + monthlyHoa)
   const piAmount = Math.round(monthlyPrincipalInterest)
 
   // Chart percentages
   const piPercent = Math.round((piAmount / (totalMonthlyPayment || 1)) * 100)
   const taxPercent = Math.round((monthlyTax / (totalMonthlyPayment || 1)) * 100)
-  const insPercent = Math.max(0, 100 - piPercent - taxPercent)
+  const insPercent = Math.round((monthlyInsurance / (totalMonthlyPayment || 1)) * 100)
+  const hoaPercent = Math.max(0, 100 - piPercent - taxPercent - insPercent)
 
   return (
     <div className={`p-4 sm:p-6 rounded-2xl w-full max-w-full overflow-hidden ${darkTheme ? 'bg-slate-900/95 text-white border border-slate-800 shadow-2xl backdrop-blur-md' : 'bg-white text-slate-900 border border-slate-200/80 shadow-xl'}`}>
@@ -120,23 +123,36 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
             />
           </div>
 
-          {/* Taxes & Insurance Input Row */}
-          <div className="grid grid-cols-2 gap-2.5 pt-1">
+          {/* Taxes, Insurance & HOA Input Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
             <div className="min-w-0">
               <label className="block text-[11px] font-semibold mb-1 text-slate-400">Annual Tax ($)</label>
               <input 
                 type="number" 
+                min="0"
                 value={propertyTaxAnnual}
                 onChange={(e) => setPropertyTaxAnnual(Number(e.target.value))}
                 className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
               />
             </div>
             <div className="min-w-0">
-              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Annual Insurance ($)</label>
+              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Annual Ins. ($)</label>
               <input 
                 type="number" 
+                min="0"
                 value={homeInsuranceAnnual}
                 onChange={(e) => setHomeInsuranceAnnual(Number(e.target.value))}
+                className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
+              />
+            </div>
+            <div className="min-w-0">
+              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Monthly HOA ($)</label>
+              <input 
+                type="number" 
+                min="0"
+                value={hoaMonthly}
+                onChange={(e) => setHoaMonthly(Number(e.target.value))}
+                placeholder="0"
                 className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
               />
             </div>
@@ -172,6 +188,9 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
               <div style={{ width: `${piPercent}%` }} className="bg-amber-500 h-full" title="Principal & Interest"></div>
               <div style={{ width: `${taxPercent}%` }} className="bg-blue-500 h-full" title="Property Taxes"></div>
               <div style={{ width: `${insPercent}%` }} className="bg-emerald-500 h-full" title="Homeowners Insurance"></div>
+              {monthlyHoa > 0 && (
+                <div style={{ width: `${hoaPercent}%` }} className="bg-indigo-500 h-full" title="HOA Fees"></div>
+              )}
             </div>
           </div>
 
@@ -199,6 +218,14 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
                 <span className="text-slate-300 font-medium whitespace-nowrap">Homeowners Insurance</span>
               </span>
               <span className="font-extrabold text-slate-100 shrink-0">${monthlyInsurance.toLocaleString()}/mo</span>
+            </div>
+
+            <div className="flex items-center justify-between gap-1.5 min-w-0">
+              <span className="flex items-center gap-1.5 min-w-0 shrink">
+                <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>
+                <span className="text-slate-300 font-medium whitespace-nowrap">Monthly HOA Dues</span>
+              </span>
+              <span className="font-extrabold text-slate-100 shrink-0">${monthlyHoa.toLocaleString()}/mo</span>
             </div>
           </div>
 

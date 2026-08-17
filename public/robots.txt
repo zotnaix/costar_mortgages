@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://korerealty.com/sitemap.xml
+Sitemap: https://costarmortgages.com/sitemap.xml
+

@@ -10,15 +10,12 @@ export default function RefinancePage() {
   const [currentRate, setCurrentRate] = useState(7.25)
   const [newRate, setNewRate] = useState(5.875)
   const [estimatedClosingCosts, setEstimatedClosingCosts] = useState(3500)
-  
   const [cashOutAmount, setCashOutAmount] = useState(0)
 
   // Calculations
   const currentMonthlyPI = (currentBalance * ((currentRate / 100 / 12) * Math.pow(1 + currentRate / 100 / 12, 360))) / (Math.pow(1 + currentRate / 100 / 12, 360) - 1)
-  
   const newLoanTotal = currentBalance + cashOutAmount + estimatedClosingCosts
   const newMonthlyPI = (newLoanTotal * ((newRate / 100 / 12) * Math.pow(1 + newRate / 100 / 12, 360))) / (Math.pow(1 + newRate / 100 / 12, 360) - 1)
-
   const monthlySavings = Math.round(currentMonthlyPI - newMonthlyPI)
   const breakEvenMonths = monthlySavings > 0 ? Math.ceil(estimatedClosingCosts / monthlySavings) : 0
 
@@ -72,98 +69,6 @@ export default function RefinancePage() {
           Lower your monthly mortgage payments, access cash equity, or shorten your loan term with Co Star Mortgages.
         </p>
       </section>
-
-      {/* Interactive Refinance Savings Calculator (Commented out per user request) */}
-      {/*
-      <section className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl mb-20">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">Instant Refinance Calculator</span>
-          <h2 className="text-3xl font-black mt-1">See How Much You Could Save Monthly</h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div>
-              <div className="flex justify-between text-xs font-bold mb-2">
-                <span>Current Mortgage Balance</span>
-                <span className="text-amber-400">${currentBalance.toLocaleString()}</span>
-              </div>
-              <input 
-                type="range" min="100000" max="1500000" step="10000"
-                value={currentBalance}
-                onChange={(e) => setCurrentBalance(Number(e.target.value))}
-              />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="flex justify-between text-xs font-bold mb-2">
-                  <span>Current Interest Rate</span>
-                  <span className="text-slate-300">{currentRate.toFixed(3)}%</span>
-                </div>
-                <input 
-                  type="range" min="4.0" max="10.0" step="0.125"
-                  value={currentRate}
-                  onChange={(e) => setCurrentRate(Number(e.target.value))}
-                />
-              </div>
-
-              <div>
-                <div className="flex justify-between text-xs font-bold mb-2">
-                  <span>New Refinance Rate</span>
-                  <span className="text-amber-400">{newRate.toFixed(3)}%</span>
-                </div>
-                <input 
-                  type="range" min="4.0" max="9.0" step="0.125"
-                  value={newRate}
-                  onChange={(e) => setNewRate(Number(e.target.value))}
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="flex justify-between text-xs font-bold mb-2">
-                <span>Optional Cash-Out Amount</span>
-                <span className="text-amber-400">${cashOutAmount.toLocaleString()}</span>
-              </div>
-              <input 
-                type="range" min="0" max="200000" step="5000"
-                value={cashOutAmount}
-                onChange={(e) => setCashOutAmount(Number(e.target.value))}
-              />
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 w-full min-w-0 max-w-full overflow-hidden bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-800 text-center space-y-5">
-            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">Estimated Monthly Savings</span>
-            <div className="text-3xl sm:text-4xl md:text-5xl font-black text-amber-400 tracking-tight break-all px-2">
-              {monthlySavings > 0 ? `$${monthlySavings}/mo` : '$0/mo'}
-            </div>
-            <p className="text-xs text-slate-400">
-              Break-even timeline: <strong className="text-white">{breakEvenMonths} months</strong>
-            </p>
-
-            <div className="pt-4 border-t border-slate-800 space-y-2 text-xs text-left min-w-0">
-              <div className="flex flex-wrap justify-between items-center text-slate-400 gap-1">
-                <span>Current Monthly P&I:</span>
-                <span className="font-bold text-white">${Math.round(currentMonthlyPI).toLocaleString()}/mo</span>
-              </div>
-              <div className="flex flex-wrap justify-between items-center text-slate-400 gap-1">
-                <span>New Monthly P&I:</span>
-                <span className="font-bold text-amber-400">${Math.round(newMonthlyPI).toLocaleString()}/mo</span>
-              </div>
-            </div>
-
-            <a 
-              href="#refi-form"
-              className="block w-full py-3.5 bg-amber-500 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-lg"
-            >
-              Connect with a Mortgage Professional
-            </a>
-          </div>
-        </div>
-      </section>
-      */}
 
       {/* Refinance Inquiry Form */}
       <section id="refi-form" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-20">

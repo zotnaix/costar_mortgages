@@ -104,11 +104,7 @@ export function MortgagesProvider({ children }) {
         isAdminLoggedIn,
         login,
         logout,
-        getLoanProgramById,
-        // Legacy aliases for backward compatibility
-        listings: loanPrograms,
-        recentlySoldListings: recentFundedLoans,
-        allListings: [...loanPrograms, ...recentFundedLoans]
+        getLoanProgramById
       }}
     >
       {children}
@@ -124,7 +120,4 @@ export function useMortgagesContext() {
   return context
 }
 
-// Re-export aliases for seamless integration with existing codebase
-export const ListingsProvider = MortgagesProvider
-export const useListingsContext = useMortgagesContext
 export default MortgagesContext

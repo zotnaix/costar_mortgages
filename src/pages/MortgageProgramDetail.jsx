@@ -154,13 +154,6 @@ export default function MortgageProgramDetailPage() {
             >
               Start Pre-Approval Form
             </Link>
-
-            {/* <Link
-              to="/calculator"
-              className="w-full block text-center py-3 bg-slate-900 border border-slate-800 text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all"
-            >
-              Calculate Payments
-            </Link> */}
           </div>
         </aside>
       </div>

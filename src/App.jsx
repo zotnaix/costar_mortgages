@@ -68,13 +68,39 @@ export default function App(){
               </div>
 
               <nav className="nav-links hidden lg:flex items-center">
-                <Link to="/mortgages">Loan Programs</Link>
+                {/* Loan Programs Dropdown */}
+                <div className="relative nav-group">
+                  <Link to="/mortgages" className="inline-flex items-center gap-1.5 py-2">
+                    <span>Loan Programs</span>
+                    <svg className="w-3.5 h-3.5 text-current opacity-70 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </Link>
+
+                  <div className="nav-dropdown">
+                    <div className="nav-dropdown-content">
+                      <Link to="/mortgages/conventional-loans">Conventional Home Loans</Link>
+                      <Link to="/mortgages/fha-loans">FHA Home Loans</Link>
+                      <Link to="/mortgages/va-loans">VA Military Loans</Link>
+                      <Link to="/mortgages/jumbo-loans">Jumbo &amp; Non-Conforming</Link>
+                      <Link to="/mortgages/arm-loans">Adjustable-Rate (ARM)</Link>
+                      <Link to="/mortgages/refinance-cashout">Refinance &amp; Cash-Out</Link>
+                      <div className="border-t border-slate-100 mt-1 pt-1">
+                        <Link to="/mortgages" className="text-amber-600 font-bold hover:text-amber-700">
+                          <span>View All Programs</span>
+                          <span>→</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <Link to="/refinance">Refinance</Link>
                 {/* <Link to="/calculator">Calculator</Link> */}
                 <Link to="/blog">Blog</Link>
                 <Link to="/services">Services</Link>
                 <Link to="/about">About Us</Link>
-                <Link to="/contact" className="ml-4 px-4 py-2 text-xs font-extrabold uppercase tracking-wider rounded-lg bg-amber-500 text-slate-950 hover:bg-amber-400 transition-colors shadow-md">Get Started</Link>
+                <Link to="/contact" className="nav-cta-btn">Get Started</Link>
               </nav>
 
               <div className="lg:hidden flex items-center">
@@ -121,17 +147,30 @@ export default function App(){
         {mobileOpen && (
           <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)}>
             <div 
-              className="bg-slate-900 text-white shadow-2xl border-b border-slate-800 p-6 absolute top-[68px] left-0 right-0 animate-in slide-in-from-top duration-200" 
+              className="bg-slate-900 text-white shadow-2xl border-b border-slate-800 p-6 absolute top-[68px] left-0 right-0 max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200" 
               onClick={(e) => e.stopPropagation()}
             >
-              <nav className="flex flex-col gap-4 text-center">
-                <Link to="/mortgages" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Loan Programs</Link>
-                <Link to="/refinance" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Refinance</Link>
-                {/* <Link to="/calculator" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Interactive Calculator</Link> */}
+              <nav className="flex flex-col gap-3 text-center">
+                <div>
+                  <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Loan Programs</div>
+                  <div className="grid grid-cols-2 gap-2 text-xs mb-2">
+                    <Link to="/mortgages/conventional-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Conventional</Link>
+                    <Link to="/mortgages/fha-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">FHA Loans</Link>
+                    <Link to="/mortgages/va-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">VA Loans</Link>
+                    <Link to="/mortgages/jumbo-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Jumbo Loans</Link>
+                    <Link to="/mortgages/arm-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">ARM Loans</Link>
+                    <Link to="/mortgages/refinance-cashout" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Refinance</Link>
+                  </div>
+                  <Link to="/mortgages" onClick={() => setMobileOpen(false)} className="text-xs font-bold text-amber-400 hover:underline">View All Programs →</Link>
+                </div>
+
+                <div className="border-t border-slate-800 my-1"></div>
+
+                <Link to="/refinance" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Refinance Portal</Link>
                 <Link to="/blog" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Mortgage Blog</Link>
                 <Link to="/services" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Services</Link>
                 <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">About Us</Link>
-                <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-2 py-3 text-slate-950 font-extrabold bg-amber-500 rounded-xl hover:bg-amber-400 transition-colors">Get Started</Link>
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-3 py-3.5 px-6 text-slate-950 font-black uppercase text-xs tracking-wider bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 rounded-xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-center">Get Started</Link>
               </nav>
             </div>
           </div>

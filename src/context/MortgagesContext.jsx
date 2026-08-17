@@ -77,16 +77,38 @@ export function MortgagesProvider({ children }) {
     sessionStorage.removeItem(STORAGE_KEY_AUTH)
   }
 
-  // Lead Submission
+  // Lead Actions
   const submitLead = (leadData) => {
     const newLead = {
       id: `lead-${Date.now()}`,
       date: new Date().toLocaleString(),
-      status: 'New Inquiry',
+      status: 'Not Done Yet',
       ...leadData
     }
     setLeads(prev => [newLead, ...prev])
     return newLead
+  }
+
+  const updateLeadStatus = (id, newStatus) => {
+    setLeads(prev => prev.map(lead => {
+      if (lead.id === id) {
+        return { ...lead, status: newStatus }
+      }
+      return lead
+    }))
+  }
+
+  const clearAllLeads = () => {
+    setLeads([])
+    try {
+      localStorage.removeItem(STORAGE_KEY_LEADS)
+    } catch (e) {
+      console.error('Failed to clear leads:', e)
+    }
+  }
+
+  const deleteLead = (id) => {
+    setLeads(prev => prev.filter(l => l.id !== id))
   }
 
   const getLoanProgramById = (id) => {
@@ -101,6 +123,9 @@ export function MortgagesProvider({ children }) {
         testimonials,
         leads,
         submitLead,
+        updateLeadStatus,
+        clearAllLeads,
+        deleteLead,
         isAdminLoggedIn,
         login,
         logout,

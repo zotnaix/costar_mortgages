@@ -20,36 +20,13 @@ export default function MortgageProgramDetailPage() {
         <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold mb-4">
-            {program.badge} • {program.category}
-          </div>
-
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
             {program.title}
           </h1>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-8">
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
             {program.intro}
           </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 rounded-2xl bg-slate-800/80 border border-slate-700/80 text-center">
-            <div>
-              <div className="text-xs text-slate-400 font-semibold">Est. Rate</div>
-              <div className="text-2xl font-black text-amber-400">{program.estRate}</div>
-            </div>
-            <div>
-              <div className="text-xs text-slate-400 font-semibold">Est. APR</div>
-              <div className="text-2xl font-black text-slate-200">{program.estApr}</div>
-            </div>
-            <div>
-              <div className="text-xs text-slate-400 font-semibold">Down Payment</div>
-              <div className="text-sm font-extrabold text-amber-400">{program.minDown}</div>
-            </div>
-            <div>
-              <div className="text-xs text-slate-400 font-semibold">Min Credit</div>
-              <div className="text-2xl font-black text-slate-200">{program.minCreditScore}+</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -130,29 +107,17 @@ export default function MortgageProgramDetailPage() {
         <aside className="lg:col-span-1">
           <div className="sticky top-28 bg-slate-950 text-white rounded-3xl p-8 border border-slate-800 shadow-xl space-y-6">
             <div>
-              <span className="text-xs font-extrabold uppercase tracking-wider text-amber-400">Ready to Lock Your Rate?</span>
-              <h3 className="text-2xl font-black text-white mt-1">Get Pre-Approved for {program.title}</h3>
+              <h3 className="text-2xl font-black text-white">Get Pre-Approved for {program.title}</h3>
               <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                 Connect with a Co Star Mortgages loan officer today. Fast response, zero lender obligation.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
-              <div className="flex justify-between">
-                <span className="text-slate-400">Term Options:</span>
-                <span className="font-bold text-slate-200">{program.termOptions.join(', ')}</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-400">Target Credit:</span>
-                <span className="font-bold text-amber-400">{program.minCreditScore}+ Score</span>
-              </div>
-            </div>
-
             <Link
               to="/contact"
-              className="w-full block text-center py-4 bg-amber-500 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20"
+              className="w-full block text-center py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl hover:from-amber-300 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/25 cursor-pointer hover:scale-[1.02]"
             >
-              Start Pre-Approval Form
+              Get Pre-Approved
             </Link>
           </div>
         </aside>

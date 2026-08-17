@@ -28,7 +28,6 @@ export default function BlogPage() {
     <main className="max-w-7xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">Co Star Mortgages Education</span>
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
           Mortgage Education &amp; Insights
         </h1>

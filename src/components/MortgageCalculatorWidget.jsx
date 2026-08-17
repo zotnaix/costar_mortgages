@@ -38,45 +38,39 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
   const hoaPercent = Math.max(0, 100 - piPercent - taxPercent - insPercent)
 
   return (
-    <div className={`p-4 sm:p-6 rounded-2xl w-full max-w-full overflow-hidden ${darkTheme ? 'bg-slate-900/95 text-white border border-slate-800 shadow-2xl backdrop-blur-md' : 'bg-white text-slate-900 border border-slate-200/80 shadow-xl'}`}>
+    <div className={`p-5 sm:p-7 rounded-3xl w-full max-w-full overflow-hidden ${darkTheme ? 'bg-slate-900/95 text-white border border-slate-800 shadow-2xl backdrop-blur-md' : 'bg-white text-slate-900 border border-slate-200/80 shadow-xl'}`}>
       {/* Header Bar */}
-      <div className="flex flex-wrap items-center justify-between pb-4 mb-5 border-b border-slate-200/20 gap-3 min-w-0">
+      <div className="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-slate-700/60 gap-3 min-w-0">
         <div className="min-w-0 flex-1">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-500 border border-amber-500/20 mb-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-            Instant Estimate
-          </span>
-          <h3 className="text-lg sm:text-xl font-black tracking-tight text-white leading-snug">{title}</h3>
+          <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white leading-snug">{title}</h3>
         </div>
 
-        <div className="flex items-center gap-1.5 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           <button 
             type="button"
             onClick={() => setLoanTermYears(30)}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${loanTermYears === 30 ? 'bg-amber-500 text-slate-950 shadow-md' : darkTheme ? 'bg-slate-800 text-slate-300 hover:bg-slate-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+            className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${loanTermYears === 30 ? 'bg-amber-500 text-slate-950 shadow-md font-black' : darkTheme ? 'bg-slate-800 text-slate-300 hover:bg-slate-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
           >
             30-Yr Fixed
           </button>
           <button 
             type="button"
             onClick={() => setLoanTermYears(15)}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${loanTermYears === 15 ? 'bg-amber-500 text-slate-950 shadow-md' : darkTheme ? 'bg-slate-800 text-slate-300 hover:bg-slate-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
+            className={`px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${loanTermYears === 15 ? 'bg-amber-500 text-slate-950 shadow-md font-black' : darkTheme ? 'bg-slate-800 text-slate-300 hover:bg-slate-700' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`}
           >
             15-Yr Fixed
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start min-w-0">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start min-w-0">
         {/* Controls Column */}
-        <div className="md:col-span-7 space-y-4 min-w-0 w-full">
+        <div className="md:col-span-7 space-y-5 min-w-0 w-full">
           {/* Home Price */}
           <div className="min-w-0">
-            <div className="flex justify-between items-center text-xs mb-1.5">
+            <div className="flex justify-between items-center text-xs mb-2">
               <label className="font-semibold text-slate-300">Home Purchase Price</label>
-              <span className="font-extrabold text-amber-400 text-sm">${homePrice.toLocaleString()}</span>
+              <span className="font-black text-amber-400 text-sm tracking-wide">${homePrice.toLocaleString()}</span>
             </div>
             <input 
               type="range" 
@@ -85,15 +79,15 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
               step="5000" 
               value={homePrice} 
               onChange={(e) => setHomePrice(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-amber-500"
             />
           </div>
 
           {/* Down Payment */}
           <div className="min-w-0">
-            <div className="flex justify-between items-center text-xs mb-1.5">
+            <div className="flex justify-between items-center text-xs mb-2">
               <label className="font-semibold text-slate-300">Down Payment ({downPercent}%)</label>
-              <span className="font-extrabold text-amber-400 text-sm">${downPaymentAmount.toLocaleString()}</span>
+              <span className="font-black text-amber-400 text-sm tracking-wide">${downPaymentAmount.toLocaleString()}</span>
             </div>
             <input 
               type="range" 
@@ -102,15 +96,15 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
               step="1" 
               value={downPercent} 
               onChange={(e) => setDownPercent(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-amber-500"
             />
           </div>
 
           {/* Interest Rate */}
           <div className="min-w-0">
-            <div className="flex justify-between items-center text-xs mb-1.5">
+            <div className="flex justify-between items-center text-xs mb-2">
               <label className="font-semibold text-slate-300">Interest Rate</label>
-              <span className="font-extrabold text-amber-400 text-sm">{interestRate.toFixed(3)}%</span>
+              <span className="font-black text-amber-400 text-sm tracking-wide">{interestRate.toFixed(3)}%</span>
             </div>
             <input 
               type="range" 
@@ -119,72 +113,73 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
               step="0.125" 
               value={interestRate} 
               onChange={(e) => setInterestRate(Number(e.target.value))}
-              className="w-full"
+              className="w-full cursor-pointer accent-amber-500"
             />
           </div>
 
           {/* Taxes, Insurance & HOA Input Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
-            <div className="min-w-0">
-              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Annual Tax ($)</label>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div className="min-w-0 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/60">
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">Annual Tax ($)</label>
               <input 
                 type="number" 
                 min="0"
                 value={propertyTaxAnnual}
                 onChange={(e) => setPropertyTaxAnnual(Number(e.target.value))}
-                className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
+                className="w-full px-2.5 py-2 text-xs font-semibold rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400"
               />
             </div>
-            <div className="min-w-0">
-              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Annual Ins. ($)</label>
+
+            <div className="min-w-0 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/60">
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">Annual Ins. ($)</label>
               <input 
                 type="number" 
                 min="0"
                 value={homeInsuranceAnnual}
                 onChange={(e) => setHomeInsuranceAnnual(Number(e.target.value))}
-                className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
+                className="w-full px-2.5 py-2 text-xs font-semibold rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400"
               />
             </div>
-            <div className="min-w-0">
-              <label className="block text-[11px] font-semibold mb-1 text-slate-400">Monthly HOA ($)</label>
+
+            <div className="min-w-0 bg-slate-800/50 p-2.5 rounded-xl border border-slate-700/60">
+              <label className="block text-[11px] font-bold text-slate-300 mb-1">Monthly HOA ($)</label>
               <input 
                 type="number" 
                 min="0"
                 value={hoaMonthly}
                 onChange={(e) => setHoaMonthly(Number(e.target.value))}
                 placeholder="0"
-                className={`w-full px-2.5 py-1.5 text-xs rounded-lg border focus:outline-none focus:border-amber-500 ${darkTheme ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-300 text-slate-900'}`}
+                className="w-full px-2.5 py-2 text-xs font-semibold rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400"
               />
             </div>
           </div>
         </div>
 
-        {/* Payment Summary Box (Card) */}
-        <div className="md:col-span-5 w-full max-w-full min-w-0 flex flex-col justify-between p-4 sm:p-5 rounded-xl bg-slate-950 text-white border border-amber-500/30 shadow-2xl overflow-hidden">
+        {/* Payment Summary Box */}
+        <div className="md:col-span-5 w-full max-w-full min-w-0 flex flex-col justify-between p-5 sm:p-6 rounded-2xl bg-slate-950 text-white border border-amber-500/30 shadow-2xl overflow-hidden space-y-4">
           {/* Total Monthly Payment Header */}
-          <div className="text-center pb-4 border-b border-slate-800/80 min-w-0">
-            <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Total Monthly Payment</span>
+          <div className="text-center pb-4 border-b border-slate-800 min-w-0">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Total Monthly Payment</span>
             
-            {/* Price Display */}
-            <div className="mt-1 flex items-baseline justify-center gap-1 flex-wrap min-w-0">
-              <span className="text-2xl sm:text-3xl font-black text-amber-400 tracking-tight whitespace-nowrap">
+            <div className="mt-1.5 flex items-baseline justify-center gap-1.5 flex-wrap min-w-0">
+              <span className="text-3xl sm:text-4xl font-black text-amber-400 tracking-tight whitespace-nowrap">
                 ${totalMonthlyPayment.toLocaleString()}
               </span>
-              <span className="text-xs font-medium text-slate-400 shrink-0">/mo</span>
+              <span className="text-xs font-bold text-slate-400 shrink-0">/mo</span>
             </div>
 
-            <p className="text-[10px] text-slate-400 mt-0.5 truncate">
-              For ${loanAmount.toLocaleString()} loan amount
+            <p className="text-[11px] text-slate-400 mt-1">
+              Loan Amount: <strong className="text-slate-200">${loanAmount.toLocaleString()}</strong>
             </p>
           </div>
 
           {/* Breakdown Progress Bar */}
-          <div className="my-4 min-w-0">
-            <div className="flex justify-between text-[11px] font-medium text-slate-400 mb-1.5">
+          <div className="min-w-0 space-y-1.5">
+            <div className="flex justify-between text-xs font-semibold text-slate-400">
               <span>Payment Breakdown</span>
               <span>100%</span>
             </div>
-            <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden flex">
+            <div className="h-3 w-full bg-slate-800 rounded-full overflow-hidden flex">
               <div style={{ width: `${piPercent}%` }} className="bg-amber-500 h-full" title="Principal & Interest"></div>
               <div style={{ width: `${taxPercent}%` }} className="bg-blue-500 h-full" title="Property Taxes"></div>
               <div style={{ width: `${insPercent}%` }} className="bg-emerald-500 h-full" title="Homeowners Insurance"></div>
@@ -195,46 +190,48 @@ export default function MortgageCalculatorWidget({ title = "Interactive Mortgage
           </div>
 
           {/* Breakdown Items List */}
-          <div className="space-y-2 text-[11px] min-w-0">
-            <div className="flex items-center justify-between gap-1.5 min-w-0">
-              <span className="flex items-center gap-1.5 min-w-0 shrink">
-                <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0"></span>
-                <span className="text-slate-300 font-medium whitespace-nowrap">Principal &amp; Interest</span>
-              </span>
-              <span className="font-extrabold text-slate-100 shrink-0">${piAmount.toLocaleString()}/mo</span>
+          <div className="space-y-3 text-xs min-w-0 pt-1">
+            <div className="grid grid-cols-[1fr_auto] items-center gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0 overflow-hidden">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0"></span>
+                <span className="text-slate-300 font-medium truncate">Principal &amp; Interest</span>
+              </div>
+              <span className="font-extrabold text-white text-right shrink-0 whitespace-nowrap">${piAmount.toLocaleString()}/mo</span>
             </div>
 
-            <div className="flex items-center justify-between gap-1.5 min-w-0">
-              <span className="flex items-center gap-1.5 min-w-0 shrink">
-                <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
-                <span className="text-slate-300 font-medium whitespace-nowrap">Property Taxes</span>
-              </span>
-              <span className="font-extrabold text-slate-100 shrink-0">${monthlyTax.toLocaleString()}/mo</span>
+            <div className="grid grid-cols-[1fr_auto] items-center gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0 overflow-hidden">
+                <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                <span className="text-slate-300 font-medium truncate">Property Taxes</span>
+              </div>
+              <span className="font-extrabold text-white text-right shrink-0 whitespace-nowrap">${monthlyTax.toLocaleString()}/mo</span>
             </div>
 
-            <div className="flex items-center justify-between gap-1.5 min-w-0">
-              <span className="flex items-center gap-1.5 min-w-0 shrink">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
-                <span className="text-slate-300 font-medium whitespace-nowrap">Homeowners Insurance</span>
-              </span>
-              <span className="font-extrabold text-slate-100 shrink-0">${monthlyInsurance.toLocaleString()}/mo</span>
+            <div className="grid grid-cols-[1fr_auto] items-center gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0 overflow-hidden">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                <span className="text-slate-300 font-medium truncate">Home Insurance</span>
+              </div>
+              <span className="font-extrabold text-white text-right shrink-0 whitespace-nowrap">${monthlyInsurance.toLocaleString()}/mo</span>
             </div>
 
-            <div className="flex items-center justify-between gap-1.5 min-w-0">
-              <span className="flex items-center gap-1.5 min-w-0 shrink">
-                <span className="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>
-                <span className="text-slate-300 font-medium whitespace-nowrap">Monthly HOA Dues</span>
-              </span>
-              <span className="font-extrabold text-slate-100 shrink-0">${monthlyHoa.toLocaleString()}/mo</span>
-            </div>
+            {monthlyHoa > 0 && (
+              <div className="grid grid-cols-[1fr_auto] items-center gap-2 min-w-0">
+                <div className="flex items-center gap-2 min-w-0 overflow-hidden">
+                  <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 shrink-0"></span>
+                  <span className="text-slate-300 font-medium truncate">HOA Dues</span>
+                </div>
+                <span className="font-extrabold text-white text-right shrink-0 whitespace-nowrap">${monthlyHoa.toLocaleString()}/mo</span>
+              </div>
+            )}
           </div>
 
           {/* Connect CTA Button */}
           <a 
             href="/contact" 
-            className="mt-5 w-full py-3 px-2 text-center text-[11px] font-extrabold tracking-wider uppercase rounded-xl bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all shadow-md leading-snug block"
+            className="w-full py-3.5 px-3 text-center text-xs font-black tracking-wider uppercase rounded-xl bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all shadow-md leading-snug block cursor-pointer"
           >
-            Connect With Professional
+            Get Pre-Approved
           </a>
         </div>
       </div>

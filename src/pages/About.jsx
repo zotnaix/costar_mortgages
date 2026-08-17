@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
-import LicenseModal from '../components/LicenseModal'
 
 export default function AboutPage(){
-  const [isLicenseOpen, setIsLicenseOpen] = useState(false)
-
   const brokerProducts = [
     'Adjustable-Rate Mortgages (ARM)',
     'Conforming Loans',
@@ -39,15 +36,12 @@ export default function AboutPage(){
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
       {/* Hero Header */}
-      <section className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span className="inline-block px-4 py-1.5 bg-amber-500/10 text-amber-700 font-extrabold text-xs rounded-full uppercase tracking-wider">
-          Co Star Mortgages Inc. • NMLS ID: {siteConfig.nmlsId}
-        </span>
+      <section className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-          About Sathya R Narayan &amp; Co Star Mortgages
+          About Co Star Mortgages
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-          Dedicated to helping home buyers and homeowners across Denver, Colorado find clear loan options, friendly guidance, and rate transparency.
+        <p className="mt-2 text-base sm:text-lg text-slate-600 leading-relaxed">
+          Friendly guidance, clear rate options, and 20+ years of Colorado real estate experience.
         </p>
       </section>
 
@@ -82,17 +76,11 @@ export default function AboutPage(){
                 href={siteConfig.socials.brokerNearMe}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-3 bg-amber-500 text-slate-950 text-xs font-extrabold uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-md flex items-center gap-2"
+                className="px-5 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2"
               >
                 <span>BNM</span>
                 <span>BrokerNearMe Profile ↗</span>
               </a>
-              <button
-                onClick={() => setIsLicenseOpen(true)}
-                className="px-5 py-3 bg-slate-900 text-white text-xs font-bold rounded-xl hover:bg-slate-800 transition-all cursor-pointer"
-              >
-                Verify NMLS License
-              </button>
             </div>
           </div>
 
@@ -102,7 +90,7 @@ export default function AboutPage(){
             <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm space-y-3">
               <h3 className="text-xl font-extrabold text-slate-900">Get to know me</h3>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                "Started my career in mortgages, been a real estate investor for 20+ years, run an end-to-end property services company, have been a lender/broker for 5+ years, and would love to earn your business with the promise of taking care of your needs with personal care and attention."
+                "With 20+ years in Colorado real estate investing and 5+ years as a licensed mortgage broker, I take pride in providing personal care, clear communication, and tailored loan solutions for every client."
               </p>
             </div>
 
@@ -159,34 +147,19 @@ export default function AboutPage(){
 
       {/* Mission Card */}
       <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-20">
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-3xl mx-auto space-y-4">
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Our Mission</h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            The traditional mortgage process can feel confusing and overwhelming. Co Star Mortgages was created to make home financing simpler, more transparent, and easier to navigate.
-          </p>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Whether you are purchasing your first home or looking into refinancing, our goal is to provide honest communication and clear mortgage options tailored to your needs.
+            Co Star Mortgages makes home financing simple, transparent, and stress-free. Whether you're purchasing or refinancing, we provide clear loan options and personal support every step of the way.
           </p>
 
-          <div className="pt-4 flex flex-wrap gap-4 items-center">
-            <button
-              onClick={() => setIsLicenseOpen(true)}
-              className="px-6 py-3 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-slate-800 transition-all cursor-pointer"
-            >
-              Verify NMLS ID: {siteConfig.nmlsId}
-            </button>
-            <Link to="/contact" className="px-6 py-3 bg-amber-500 text-slate-950 rounded-xl text-xs font-extrabold uppercase tracking-wider hover:bg-amber-400 transition-all shadow-md">
-              Connect with Sathya R Narayan
+          <div className="pt-2 flex flex-wrap gap-4 items-center">
+            <Link to="/contact" className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-md">
+              Connect With Us
             </Link>
           </div>
         </div>
       </section>
-
-      {/* License Modal */}
-      <LicenseModal 
-        isOpen={isLicenseOpen}
-        onClose={() => setIsLicenseOpen(false)}
-      />
     </main>
   )
 }

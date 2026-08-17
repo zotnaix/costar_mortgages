@@ -7,7 +7,7 @@ export const siteConfig = {
   companyName: 'Co Star Mortgages Inc.',
   brokerName: 'Sathya R Narayan',
   tagline: 'Explore Your Mortgage Options in Denver, CO',
-  welcomeText: "Welcome to Co Star Mortgages. Based in Denver, Colorado, we're here to help you navigate home purchases, investment property financing, refinancing, and home equity options with clear rate transparency and friendly guidance.",
+  welcomeText: "Fast, transparent home loans and friendly mortgage guidance across Denver, Colorado.",
   logoDark: '/logo.svg',
   logoWhite: '/logo-white.svg',
   nmlsId: '2042475',
@@ -39,10 +39,10 @@ export const siteConfig = {
 
   // Accurate Service Descriptions (Compliant)
   officialServices: [
-    { title: 'New Home Purchases', icon: '🏠', desc: 'First-time homebuyer financing & Denver residential loan options.' },
-    { title: 'Investor Purchases', icon: '🏘️', desc: 'DSCR & investment property loan options for Colorado real estate investors.' },
-    { title: 'Refinancing', icon: '🔄', desc: 'Explore rate-and-term refinancing and debt consolidation options.' },
-    { title: 'Home Equity Loans', icon: '💰', desc: 'HELOC & cash-out equity options based on Denver home valuations.' }
+    { title: 'New Home Purchases', icon: '🏠', desc: 'First-time homebuyer loans & residential purchase options.' },
+    { title: 'Investor Purchases', icon: '🏘️', desc: 'Investment property & rental portfolio financing.' },
+    { title: 'Refinancing', icon: '🔄', desc: 'Lower your payment or adjust your loan term.' },
+    { title: 'Home Equity Loans', icon: '💰', desc: 'Access your home equity with flexible cash-out options.' }
   ],
 
   // Market Rate Benchmarks

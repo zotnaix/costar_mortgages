@@ -45,15 +45,11 @@ export default function ContactPage() {
           {/* Left Column: Contact Details */}
           <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-8">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold mb-4">
-                Co Star Mortgages • {siteConfig.brokerName}
-              </div>
-
               <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
                 Connect With Us
               </h1>
               <p className="text-slate-300 text-sm leading-relaxed mb-8">
-                Connect directly with licensed mortgage broker Sathya R Narayan (NMLS ID: {siteConfig.nmlsId}) for custom rate quotes and mortgage guidance in Highlands Ranch, CO.
+                Get custom rate quotes and mortgage guidance in Denver and Highlands Ranch, CO.
               </p>
 
               <ul className="space-y-6 text-sm font-medium">
@@ -226,9 +222,9 @@ export default function ContactPage() {
 
                 <button 
                   type="submit" 
-                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-4 rounded-xl text-xs uppercase tracking-widest transition-all shadow-xl cursor-pointer"
+                  className="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
                 >
-                  Connect with Sathya R Narayan
+                  Request Rate Quote
                 </button>
               </form>
             )}

@@ -42,39 +42,38 @@ export default function RefinancePage() {
   const faqs = [
     {
       id: 'when-to-refi',
-      question: 'When is the right time to refinance your mortgage?',
-      answer: 'A general rule of thumb is if you can lower your interest rate by 0.50% to 0.75% or more, refinancing is usually worthwhile. It is also beneficial if you want to eliminate monthly PMI, switch from an ARM to a fixed-rate loan, or cash out built-up equity.'
+      question: 'When is the right time to refinance?',
+      answer: 'Generally, if you can reduce your rate by 0.5% or more, shorten your term, remove monthly PMI, or tap into home equity, refinancing can be a smart move.'
     },
     {
       id: 'break-even',
-      question: 'What is the refinancing break-even point?',
-      answer: 'Your break-even point is the number of months it takes for your monthly interest savings to exceed the total closing costs of your new loan. For example, if closing costs are $3,000 and you save $200/month, your break-even point is 15 months.'
+      question: 'What is the break-even point?',
+      answer: 'The break-even point is how long it takes for monthly savings to cover closing costs. For example, saving $200/month on $3,000 closing costs breaks even in 15 months.'
     },
     {
       id: 'cash-out',
       question: 'How does a Cash-Out Refinance work?',
-      answer: 'A cash-out refinance replaces your existing mortgage with a new, larger loan. You receive the difference in lump-sum cash at closing, which can be used to pay off high-interest credit debt, complete home renovations, or invest.'
+      answer: 'A cash-out refinance replaces your current mortgage with a larger loan, giving you the difference in cash for renovations, investments, or debt payoff.'
     }
   ]
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
       {/* Hero Title */}
-      <section className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">Co Star Mortgages Refinance Portal</span>
+      <section className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-          Refinance Your Mortgage & Save
+          Refinance Your Mortgage
         </h1>
         <p className="text-slate-600 text-base sm:text-lg">
-          Lower your monthly mortgage payments, access cash equity, or shorten your loan term with Co Star Mortgages.
+          Lower your monthly payments, access equity, or shorten your loan term.
         </p>
       </section>
 
       {/* Refinance Inquiry Form */}
       <section id="refi-form" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-20">
         <div className="text-center max-w-xl mx-auto mb-8">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Request Official Refinance Quote</h2>
-          <p className="text-xs text-slate-600 mt-2">Get a custom rate lock quote &amp; closing cost estimate in 24 hours.</p>
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Request a Refinance Quote</h2>
+          <p className="text-xs text-slate-600 mt-2">Get custom rate and closing cost options in 24 hours.</p>
         </div>
 
         {formSubmitted ? (
@@ -135,7 +134,7 @@ export default function RefinancePage() {
 
             <button 
               type="submit"
-              className="w-full py-4 bg-slate-900 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-slate-800 transition-all shadow-md"
+              className="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
             >
               Get Custom Refinance Quote
             </button>

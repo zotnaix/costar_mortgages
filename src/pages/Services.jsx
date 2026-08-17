@@ -6,69 +6,62 @@ export default function ServicesPage() {
     {
       id: 'pre-approval',
       title: 'Digital Home Loan Pre-Approvals',
-      badge: 'Fast Origination',
-      description: 'Get verified pre-approval letters in as little as 24 hours. Present a rock-solid financing offer to home sellers with zero delays.',
-      features: ['24-Hour turnaround time', '100% Digital document portal', 'Verified pre-approval certificate'],
+      description: 'Fast, verified pre-approval letters in as little as 24 hours to help you make strong offers.',
+      features: ['24-Hour turnaround', '100% Digital document portal', 'Verified pre-approval letter'],
       link: '/contact',
       buttonText: 'Get Pre-Approved'
     },
     {
       id: 'rate-lock',
-      title: 'Rate Lock Guarantee',
-      badge: 'Protected Rates',
-      description: 'Protect your mortgage rate against market fluctuations while you shop for homes or finalize contract closing details.',
-      features: ['Up to 90-day rate lock options', 'Float-down options if rates drop', 'Zero surprise rate increases'],
+      title: 'Rate Lock Protection',
+      description: 'Protect your interest rate against market fluctuations while you shop for homes.',
+      features: ['Up to 90-day rate lock options', 'Float-down options available', 'Transparent rate advisory'],
       link: '/mortgages',
-      buttonText: 'View Current Rates'
+      buttonText: 'Explore Rates'
     },
     {
       id: 'refinance-advisory',
       title: 'Refinance & Debt Consolidation',
-      badge: 'Lower Payments',
-      description: 'Lower your monthly payment, adjust your loan terms, or cash out built-up home equity to consolidate high-interest credit debt.',
-      features: ['Rate & term refinancing', 'Cash-out equity access', 'PMI cancellation assessments'],
+      description: 'Lower your monthly payment, adjust your loan terms, or tap into home equity.',
+      features: ['Rate & term refinancing', 'Cash-out equity options', 'PMI removal assessment'],
       link: '/refinance',
-      buttonText: 'Calculate Refinance Savings'
+      buttonText: 'Calculate Savings'
     },
     {
       id: 'first-time-buyer',
-      title: 'First-Time Homebuyer Assistance',
-      badge: 'Low Down Payment',
-      description: 'Specialized financing guidance for first-time buyers leveraging FHA 3.5% down payment options and local down payment assistance.',
-      features: ['Down payment grant guidance', 'Flexible credit guidelines', 'Educational home loan walkthroughs'],
+      title: 'First-Time Homebuyer Guidance',
+      description: 'Low down payment options starting at 3.5% with personalized guidance.',
+      features: ['Low down payment options', 'Flexible credit guidelines', 'Step-by-step loan walkthroughs'],
       link: '/mortgages/fha-loans',
       buttonText: 'Explore FHA Loans'
     },
     {
       id: 'va-military',
       title: 'VA Military Home Loans',
-      badge: '0% Down Payment',
-      description: 'Honoring active military and veterans with $0 down payment financing, reduced fees, and zero monthly mortgage insurance.',
-      features: ['0% Down payment options', 'No monthly PMI fee', 'Assistance with Certificate of Eligibility (COE)'],
+      description: 'Exclusive 0% down payment financing and zero monthly PMI for military families.',
+      features: ['0% Down payment options', 'No monthly PMI fee', 'Assistance with COE verification'],
       link: '/mortgages/va-loans',
       buttonText: 'Explore VA Loans'
     },
     {
       id: 'custom-advisory',
       title: 'Dedicated Loan Consultation',
-      badge: 'Personalized',
-      description: 'One-on-one consultation with experienced mortgage advisors to compare loan structures, interest rates, and long-term wealth strategies.',
-      features: ['Side-by-side loan comparisons', 'Debt-to-Income optimization', 'Personalized rate analysis'],
+      description: 'One-on-one consultation to compare loan structures and find the right strategy.',
+      features: ['Side-by-side loan comparisons', 'Credit & DTI optimization', 'Personalized rate analysis'],
       link: '/contact',
-      buttonText: 'Book Loan Consultation'
+      buttonText: 'Book Consultation'
     }
   ]
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
       {/* Page Title */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">Co Star Mortgages Advisory</span>
+      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-          Mortgage & Financial Origination Services
+          Mortgage Services
         </h1>
         <p className="text-slate-600 text-base sm:text-lg">
-          From fast pre-approval certificates to custom refinance strategies, Co Star Mortgages provides transparent home loan advisory.
+          Personalized, transparent home loan advisory in Colorado.
         </p>
       </div>
 
@@ -77,11 +70,6 @@ export default function ServicesPage() {
         {services.map((s) => (
           <div key={s.id} className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all flex flex-col justify-between space-y-6">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full border border-amber-500/20">
-                  {s.badge}
-                </span>
-              </div>
               <h3 className="text-xl font-extrabold text-slate-900 mb-2">{s.title}</h3>
               <p className="text-slate-600 text-xs leading-relaxed mb-6">{s.description}</p>
               

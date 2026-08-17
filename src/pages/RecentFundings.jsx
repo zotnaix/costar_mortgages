@@ -10,7 +10,6 @@ export default function RecentFundingsPage() {
     <main className="max-w-7xl mx-auto px-6 py-12">
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">Co Star Mortgages Track Record</span>
         <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
           Recent Funded Loans & Borrower Savings
         </h1>
@@ -25,7 +24,7 @@ export default function RecentFundingsPage() {
           <div key={item.id} className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex justify-between items-center text-xs font-extrabold">
-                <span className="px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20">{item.loanType}</span>
+                <span className="text-slate-500 font-bold">{item.loanType}</span>
                 <span className="text-emerald-600 font-extrabold">{item.turnaroundDays}</span>
               </div>
 
@@ -55,7 +54,6 @@ export default function RecentFundingsPage() {
       {/* Verified Borrower Reviews Grid */}
       <section className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl mb-16">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">Borrower Testimonials</span>
           <h2 className="text-3xl font-black text-white">What Our Clients Say</h2>
         </div>
 

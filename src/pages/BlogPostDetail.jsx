@@ -17,9 +17,6 @@ export default function BlogPostDetailPage() {
 
       <article className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg space-y-8">
         <div>
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold bg-amber-500/10 text-amber-700 border border-amber-500/20 mb-4 uppercase">
-            {post.category}
-          </span>
           <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
             {post.title}
           </h1>

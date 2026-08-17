@@ -33,7 +33,7 @@ export default function App(){
   if (isAdmin) {
     return (
       <MortgagesProvider>
-        <Routes>
+        <Routes location={location}>
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </MortgagesProvider>
@@ -43,9 +43,11 @@ export default function App(){
   if (isContact) {
     return (
       <MortgagesProvider>
-        <Routes>
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+        <div key={location.pathname} className="page-transition">
+          <Routes location={location}>
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </div>
       </MortgagesProvider>
     )
   }
@@ -126,7 +128,7 @@ export default function App(){
 
           <div style={{ paddingTop: isHome ? 0 : 76 }}>
             <div key={location.pathname} className="page-transition">
-              <Routes>
+              <Routes location={location}>
                 <Route path="/" element={<Home />} />
                 <Route path="/mortgages" element={<MortgageProgramsPage />} />
                 <Route path="/mortgages/:id" element={<MortgageProgramDetailPage />} />

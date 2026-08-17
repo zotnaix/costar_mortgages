@@ -9,24 +9,24 @@ export const getBrokerageSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'MortgageBroker',
   '@id': `${siteConfig.domain || 'https://costarmortgages.com'}/#brokerage`,
-  name: siteConfig.brandName,
-  legalName: siteConfig.companyName || siteConfig.brandName,
+  name: siteConfig.brandName || 'Co Star Mortgages',
+  legalName: siteConfig.companyName || siteConfig.brandName || 'Co Star Mortgages Inc.',
   url: siteConfig.domain || 'https://costarmortgages.com',
   logo: `${siteConfig.domain || 'https://costarmortgages.com'}/logo.svg`,
   image: `${siteConfig.domain || 'https://costarmortgages.com'}/logo-white.svg`,
-  description: siteConfig.welcomeText,
-  telephone: siteConfig.contact.phone,
-  email: siteConfig.contact.email,
+  description: siteConfig.welcomeText || siteConfig.tagline || 'Home loans in Denver, CO',
+  telephone: siteConfig.contact?.phone || '+1 303-886-3621',
+  email: siteConfig.contact?.email || 'costarmortgages@gmail.com',
   priceRange: '$$',
   founder: {
     '@type': 'Person',
-    name: siteConfig.broker.name,
-    jobTitle: siteConfig.broker.title,
-    identifier: siteConfig.broker.nmls
+    name: siteConfig.broker?.name || siteConfig.brokerName || 'Sathya R Narayan',
+    jobTitle: siteConfig.broker?.title || 'Licensed Mortgage Broker & Principal',
+    identifier: siteConfig.broker?.nmls || `NMLS ID: ${siteConfig.nmlsId || '2042475'}`
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: siteConfig.contact.address,
+    streetAddress: siteConfig.contact?.address || '10296 South Dowling Way',
     addressLocality: 'Highlands Ranch',
     addressRegion: 'CO',
     postalCode: '80126',
@@ -43,34 +43,34 @@ export const getBrokerageSchema = () => ({
     { '@type': 'State', name: 'Colorado' }
   ],
   sameAs: [
-    siteConfig.socials.facebook,
-    siteConfig.socials.instagram,
-    siteConfig.socials.brokerNearMe
+    siteConfig.socials?.facebook,
+    siteConfig.socials?.instagram,
+    siteConfig.socials?.brokerNearMe
   ].filter(Boolean)
 })
 
-export const getArticleSchema = (article) => ({
+export const getArticleSchema = (article = {}) => ({
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: article.title,
-  description: article.excerpt || article.summary,
+  headline: article.title || '',
+  description: article.excerpt || article.summary || '',
   image: article.coverImage || `${siteConfig.domain || 'https://costarmortgages.com'}/logo-white.svg`,
   author: {
     '@type': 'Person',
-    name: article.author || siteConfig.broker.name
+    name: article.author || siteConfig.broker?.name || siteConfig.brokerName || 'Sathya R Narayan'
   },
   publisher: {
     '@type': 'Organization',
-    name: siteConfig.brandName,
+    name: siteConfig.brandName || 'Co Star Mortgages',
     logo: {
       '@type': 'ImageObject',
       url: `${siteConfig.domain || 'https://costarmortgages.com'}/logo.svg`
     }
   },
-  datePublished: article.date,
+  datePublished: article.date || new Date().toISOString().split('T')[0],
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `${siteConfig.domain || 'https://costarmortgages.com'}/blog/${article.id}`
+    '@id': `${siteConfig.domain || 'https://costarmortgages.com'}/blog/${article.id || ''}`
   }
 })
 

@@ -28,7 +28,7 @@ export default function SEO({
   const robotsDirective = noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 
   // Development warnings for SEO best practice length enforcement
-  if (process.env.NODE_ENV !== 'production') {
+  if (import.meta.env?.DEV) {
     if (finalTitle.length > 60) {
       console.warn(`[SEO Warning] Document Title exceeds recommended 60 chars (${finalTitle.length} chars): "${finalTitle}"`)
     }

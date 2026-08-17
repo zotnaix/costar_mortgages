@@ -2,10 +2,16 @@
 // Customized for Co Star Mortgages Inc. — Denver, Colorado (Sathya R Narayan, NMLS ID: 2042475)
 
 export const siteConfig = {
-  // Brand & Broker Identity
+  // Domain & Brand Identity
+  domain: 'https://costarmortgages.com',
   brandName: 'Co Star Mortgages',
   companyName: 'Co Star Mortgages Inc.',
   brokerName: 'Sathya R Narayan',
+  broker: {
+    name: 'Sathya R Narayan',
+    title: 'Licensed Mortgage Broker & Principal',
+    nmls: 'NMLS ID: 2042475'
+  },
   tagline: 'Explore Your Mortgage Options in Denver, CO',
   welcomeText: "Fast, transparent home loans and friendly mortgage guidance across Denver, Colorado.",
   logoDark: '/logo.svg',

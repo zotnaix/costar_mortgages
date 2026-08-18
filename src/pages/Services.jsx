@@ -70,10 +70,10 @@ export default function ServicesPage() {
         {services.map((s) => (
           <div key={s.id} className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all flex flex-col justify-between space-y-6">
             <div>
-              <h3 className="text-2xl sm:text-[1.75rem] font-extrabold text-slate-900 mb-2 leading-tight">{s.title}</h3>
-              <p className="text-slate-600 text-xs leading-relaxed mb-6">{s.description}</p>
+              <h3 className="text-2xl sm:text-[1.9rem] font-extrabold text-slate-900 mb-2 leading-tight">{s.title}</h3>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">{s.description}</p>
               
-              <ul className="space-y-2.5 border-t border-slate-100 pt-4 text-xs font-semibold text-slate-700">
+              <ul className="space-y-2.5 border-t border-slate-100 pt-4 text-sm sm:text-base font-semibold text-slate-700">
                 {s.features.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <span className="text-amber-500 font-bold">✓</span>

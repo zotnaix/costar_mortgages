@@ -68,22 +68,24 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         {services.map((s) => (
-          <div key={s.id} className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all flex flex-col justify-between space-y-6">
-            <div>
-              <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{s.title}</h3>
-              <p className="text-slate-600 text-medium leading-relaxed mb-6">{s.description}</p>
-              
-              <ul className="space-y-2.5 border-t border-slate-100 pt-4 text-sm font-semibold text-slate-700">
+          <div key={s.id} className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-xl transition-all flex flex-col h-full">
+            <div className="flex flex-col flex-1">
+              <div className="min-h-[104px]">
+                <h3 className="text-2xl font-extrabold text-slate-900 leading-tight mb-3 text-center">{s.title}</h3>
+              </div>
+              <p className="text-slate-600 text-medium leading-relaxed min-h-[84px] mb-6 text-center">{s.description}</p>
+
+              <ul className="space-y-3 border-t border-slate-100 pt-4 text-sm font-semibold text-slate-700 mt-auto">
                 {s.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-center gap-2">
-                    <span className="text-amber-500 font-bold">✓</span>
-                    <span>{feat}</span>
+                  <li key={idx} className="flex items-start gap-3 leading-relaxed">
+                    <span className="mt-0.5 text-amber-500 font-bold leading-none shrink-0">✓</span>
+                    <span className="block">{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="pt-4 border-t border-slate-100">
+            <div className="pt-4 mt-6 border-t border-slate-100">
               <Link 
                 to={s.link}
                 className="w-full inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider py-3.5 px-4 rounded-xl shadow-sm transition-all"

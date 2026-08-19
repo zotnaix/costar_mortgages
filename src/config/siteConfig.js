@@ -27,13 +27,12 @@ export const siteConfig = {
   // Official Contact & Office Information (Sathya R Narayan)
   contact: {
     brokerName: 'Sathya R Narayan',
-    address: '10296 South Dowling Way',
-    cityStateZip: 'Highlands Ranch (Denver Metro), CO 80126',
-    fullAddress: '10296 South Dowling Way, Highlands Ranch, Denver Metro, CO 80126',
+    address: 'Denver, CO',
+    cityStateZip: 'Denver, CO',
+    fullAddress: 'Denver, CO',
     phone: '+1 303-886-3621',
     email: 'costarmortgages@gmail.com',
-    hours: 'Mon – Sat, 8:00 AM – 7:00 PM MST',
-    googleMapsEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent('10296 South Dowling Way Highlands Ranch Denver CO 80126')}&output=embed`
+    googleMapsEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent('Denver, CO')}&output=embed`
   },
 
   // Service Areas (Denver Colorado Metro)

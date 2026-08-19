@@ -42,7 +42,6 @@ export default function BlogPostDetailPage() {
         <div className="pt-8 border-t border-slate-100 bg-slate-50 p-6 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h3 className="text-base font-bold text-slate-900">Have Questions About Your Mortgage Options?</h3>
-            <p className="text-xs text-slate-500 mt-1">Connect with a licensed loan professional (NMLS ID: {siteConfig.nmlsId})</p>
           </div>
           <Link
             to="/contact"

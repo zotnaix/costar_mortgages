@@ -62,8 +62,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Office Location</div>
-                    <div className="text-white mt-0.5 font-semibold text-base">{siteConfig.contact.address}</div>
-                    <div className="text-slate-300 text-xs mt-0.5">{siteConfig.contact.cityStateZip}</div>
+                    <div className="text-white mt-0.5 font-semibold text-base">{siteConfig.contact.fullAddress}</div>
                   </div>
                 </li>
 
@@ -76,7 +75,6 @@ export default function ContactPage() {
                   <div>
                     <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Direct Phone</div>
                     <div className="text-white mt-0.5 font-semibold text-base">{siteConfig.contact.phone}</div>
-                    <div className="text-slate-300 text-xs mt-0.5">{siteConfig.contact.hours}</div>
                   </div>
                 </li>
 
@@ -118,8 +116,7 @@ export default function ContactPage() {
 
           {/* Right Column: Pre-Approval Form */}
           <div className="lg:col-span-6">
-            <h2 className="text-2xl font-black text-white tracking-tight mb-2">Pre-Approval &amp; Rate Consultation</h2>
-            <p className="text-xs text-slate-300 mb-6">No hard credit pull for preliminary consultation estimates.</p>
+            <h2 className="text-2xl font-black text-white tracking-tight mb-6">Pre-Approval &amp; Rate Consultation</h2>
 
             {submitted ? (
               <div className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 p-8 rounded-2xl text-center my-6 space-y-4">

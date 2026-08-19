@@ -73,7 +73,6 @@ export default function RefinancePage() {
       <section id="refi-form" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-20">
         <div className="text-center max-w-xl mx-auto mb-8">
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Request a Refinance Quote</h2>
-          <p className="text-xs text-slate-600 mt-2">Get custom rate and closing cost options in 24 hours.</p>
         </div>
 
         {formSubmitted ? (

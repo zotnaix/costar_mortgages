@@ -129,9 +129,8 @@ export default function AboutPage(){
 
       {/* Pillars Section */}
       <section className="mb-20">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl font-black text-slate-900">Why Work With Co Star Mortgages</h2>
-          <p className="mt-2 text-xs text-slate-500">Built around clarity, personal support, and borrower guidance.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

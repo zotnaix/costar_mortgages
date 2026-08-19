@@ -88,7 +88,6 @@ export default function MortgageProgramDetailPage() {
             <h2 className="text-2xl font-black text-slate-900 pb-3 border-b border-slate-100">
               Required Documents Checklist
             </h2>
-            <p className="text-xs text-slate-600">Gather these standard financial documents to accelerate your digital pre-approval:</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {program.requiredDocs.map((doc, idx) => (

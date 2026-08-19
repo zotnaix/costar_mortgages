@@ -81,7 +81,6 @@ export default function RecentFundingsPage() {
       {/* Bottom CTA */}
       <div className="text-center bg-white border border-slate-200 rounded-3xl p-10 max-w-3xl mx-auto shadow-sm">
         <h3 className="text-2xl font-black text-slate-900">Ready to start your home purchase or refinance?</h3>
-        <p className="text-xs text-slate-600 mt-2 max-w-md mx-auto">Get pre-approved digitally in as little as 2 minutes with Co Star Mortgages.</p>
         <Link to="/contact" className="inline-block mt-6 px-8 py-4 bg-amber-500 text-slate-950 text-xs font-extrabold uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
           Start Pre-Approval Inquiry
         </Link>

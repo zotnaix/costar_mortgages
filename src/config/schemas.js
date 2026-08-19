@@ -26,10 +26,8 @@ export const getBrokerageSchema = () => ({
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: siteConfig.contact?.address || '10296 South Dowling Way',
-    addressLocality: 'Highlands Ranch',
+    addressLocality: 'Denver',
     addressRegion: 'CO',
-    postalCode: '80126',
     addressCountry: 'US'
   },
   geo: {

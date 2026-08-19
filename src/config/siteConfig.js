@@ -12,7 +12,7 @@ export const siteConfig = {
     title: 'Licensed Mortgage Broker & Principal',
     nmls: 'NMLS ID: 2042475'
   },
-  tagline: 'Explore Your Mortgage Options in Denver, CO',
+  tagline: 'Where Your Home Story Shines',
   welcomeText: "Fast, transparent home loans and friendly mortgage guidance across Denver, Colorado.",
   logoDark: '/logo.svg',
   logoWhite: '/logo-white.svg',

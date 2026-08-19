@@ -1,40 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
 import { loanPrograms } from '../data/mortgages'
-import { blogPosts } from '../data/blogPosts'
 import MortgageCalculatorWidget from '../components/MortgageCalculatorWidget'
-import { useMortgagesContext } from '../context/MortgagesContext'
 import SEO from '../components/SEO'
 import { getBrokerageSchema } from '../config/schemas'
 
 export default function Home() {
-  const { submitLead } = useMortgagesContext()
-
-  // Pre-approval consultation form state
-  const [formState, setFormState] = useState({
-    loanPurpose: 'New Home Purchase',
-    propertyType: 'Single Family',
-    creditScore: 'Good (680-739)',
-    estimatedPrice: '$450,000',
-    fullName: '',
-    email: '',
-    phone: ''
-  })
-
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!formState.fullName || !formState.email) return
-    submitLead(formState)
-    setSubmitted(true)
-  }
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <SEO 
-        title="Denver Metro, Colorado Mortgage Broker"
+        title="Where Your Home Story Shines"
         description="Explore Colorado mortgage options with licensed broker Sathya R Narayan (NMLS #2042475). Conventional, FHA, VA, Jumbo loans, and refinancing."
         canonicalUrl="/"
         schema={getBrokerageSchema()}
@@ -50,9 +27,10 @@ export default function Home() {
             {/* Left Hero Headline (40% Split: lg:col-span-5) */}
             <div className="lg:col-span-5 space-y-6 text-center lg:text-left min-w-0">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
-                Explore Your <br />
+                Where Your <br />
+                Home Story{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
-                  Mortgage Options.
+                  Shines.
                 </span>
               </h1>
 
@@ -101,15 +79,15 @@ export default function Home() {
               <div className="space-y-3 text-xs font-medium text-slate-300">
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">✓</span>
-                  <span>🏠 New Home Purchase Loans</span>
+                  <span>New Home Purchase Loans</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">✓</span>
-                  <span>🏘️ Real Estate Investor Financing</span>
+                  <span>Real Estate Investor Financing</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">✓</span>
-                  <span>🔄 Refinance &amp; Cash-Out Options</span>
+                  <span>Refinance &amp; Cash-Out Options</span>
                 </div>
               </div>
 
@@ -278,123 +256,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMPLIANT CONSULTATION FORM SECTION */}
-      <section id="pre-approval" className="bg-slate-950 text-white py-20 relative">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl">
-            <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-              <h2 className="text-3xl font-black tracking-tight">Request a Custom Rate Quote</h2>
+      {/* FINAL CALL TO ACTION BANNER */}
+      <section className="bg-slate-950 text-white py-20 relative overflow-hidden">
+        {/* Glow Accents */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <div className="bg-gradient-to-b from-slate-900 to-slate-900/80 rounded-3xl p-8 sm:p-14 border border-slate-800 shadow-2xl text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              <span>Licensed Colorado Mortgage Brokerage</span>
             </div>
 
-            {submitted ? (
-              <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8 text-center space-y-4">
-                <div className="w-12 h-12 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center mx-auto text-xl font-bold">✓</div>
-                <h3 className="text-2xl font-bold text-white">Consultation Request Received</h3>
-                <p className="text-xs text-slate-300">
-                  Thank you, <strong className="text-amber-400">{formState.fullName}</strong>. A licensed Co Star Mortgages loan professional will contact you shortly to discuss your options.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Service Needed</label>
-                    <select 
-                      value={formState.loanPurpose}
-                      onChange={(e) => setFormState({...formState, loanPurpose: e.target.value})}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    >
-                      <option value="New Home Purchase">🏠 New Home Purchase</option>
-                      <option value="Investor Purchase">🏘️ Investor Purchase</option>
-                      <option value="Refinancing">🔄 Refinancing</option>
-                      <option value="Home Equity Loan">💰 Home Equity Loan</option>
-                    </select>
-                  </div>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+                Ready to Start Your <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
+                  Home Story?
+                </span>
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                Connect directly with licensed broker Sathya R Narayan for custom rate quotes, fast pre-approval letters, and personalized guidance across Denver Metro, Colorado.
+              </p>
+            </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Property Type</label>
-                    <select 
-                      value={formState.propertyType}
-                      onChange={(e) => setFormState({...formState, propertyType: e.target.value})}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    >
-                      <option value="Single Family">Single Family Home</option>
-                      <option value="Townhome">Townhome / Condominium</option>
-                      <option value="MultiFamily">Multi-Family / Investment</option>
-                    </select>
-                  </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl hover:from-amber-300 hover:to-amber-500 transition-all shadow-xl shadow-amber-500/25 hover:scale-[1.02] flex items-center justify-center gap-2"
+              >
+                <span>Get Pre-Approved</span>
+                <span>→</span>
+              </Link>
+              <a
+                href="tel:+13038863621"
+                className="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2"
+              >
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Call (303) 886-3621</span>
+              </a>
+            </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Estimated Home Price</label>
-                    <input 
-                      type="text"
-                      value={formState.estimatedPrice}
-                      onChange={(e) => setFormState({...formState, estimatedPrice: e.target.value})}
-                      placeholder="e.g. $450,000"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Credit Score Range</label>
-                    <select 
-                      value={formState.creditScore}
-                      onChange={(e) => setFormState({...formState, creditScore: e.target.value})}
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    >
-                      <option value="Excellent (740+)">Excellent (740+)</option>
-                      <option value="Good (680-739)">Good (680-739)</option>
-                      <option value="Fair (620-679)">Fair (620-679)</option>
-                      <option value="Building (580-619)">Building Credit (580-619)</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Full Name *</label>
-                    <input 
-                      type="text"
-                      required
-                      value={formState.fullName}
-                      onChange={(e) => setFormState({...formState, fullName: e.target.value})}
-                      placeholder="Jane Doe"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Email Address *</label>
-                    <input 
-                      type="email"
-                      required
-                      value={formState.email}
-                      onChange={(e) => setFormState({...formState, email: e.target.value})}
-                      placeholder="jane@example.com"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-slate-300 mb-2">Phone Number</label>
-                    <input 
-                      type="tel"
-                      value={formState.phone}
-                      onChange={(e) => setFormState({...formState, phone: e.target.value})}
-                      placeholder="(303) 886-3621"
-                      className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-4 bg-amber-500 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/20"
-                >
-                  Connect with a Mortgage Professional
-                </button>
-              </form>
-            )}
+            <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 text-[11px] text-slate-400 font-medium">
+              <span>✓ NMLS ID: {siteConfig.nmlsId}</span>
+              <span>✓ Equal Housing Lender</span>
+              <span>✓ Fast Turnaround &amp; Zero Obligation</span>
+            </div>
           </div>
         </div>
       </section>

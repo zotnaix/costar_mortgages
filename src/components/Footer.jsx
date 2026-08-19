@@ -42,14 +42,15 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick Loan Links */}
+            {/* Loan Program Links */}
             <div>
-              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Loan Services</h3>
+              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Loan Programs</h3>
               <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
-                <li><Link to="/mortgages" className="hover:text-white transition-colors">🏠 New Home Purchases</Link></li>
-                <li><Link to="/mortgages" className="hover:text-white transition-colors">🏘️ Investor Purchases</Link></li>
-                <li><Link to="/refinance" className="hover:text-white transition-colors">🔄 Refinancing</Link></li>
-                <li><Link to="/refinance" className="hover:text-white transition-colors">💰 Home Equity Loans</Link></li>
+                <li><Link to="/mortgages/conventional-loans" className="hover:text-white transition-colors">Conventional Loans</Link></li>
+                <li><Link to="/mortgages/fha-loans" className="hover:text-white transition-colors">FHA Loans</Link></li>
+                <li><Link to="/mortgages/va-loans" className="hover:text-white transition-colors">VA Military Loans</Link></li>
+                <li><Link to="/mortgages/jumbo-loans" className="hover:text-white transition-colors">Jumbo Loans</Link></li>
+                <li><Link to="/refinance" className="hover:text-white transition-colors">Refinance &amp; Cash-Out</Link></li>
               </ul>
             </div>
 

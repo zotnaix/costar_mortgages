@@ -57,8 +57,8 @@ export default function Footer() {
             <div>
               <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Company &amp; Media</h3>
               <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
-                <li><Link to="/blog" className="hover:text-white transition-colors">Mortgage Blog &amp; Tips</Link></li>
-                <li><Link to="/services" className="hover:text-white transition-colors">Mortgage Advisory Services</Link></li>
+                {/* <li><Link to="/blog" className="hover:text-white transition-colors">Mortgage Blog &amp; Tips</Link></li> */}
+                {/* <li><Link to="/services" className="hover:text-white transition-colors">Mortgage Advisory Services</Link></li> */}
                 <li><Link to="/about" className="hover:text-white transition-colors">About Sathya R Narayan</Link></li>
                 <li><Link to="/contact" className="hover:text-white transition-colors">Book a Consultation</Link></li>
                 <li><Link to="/admin" className="hover:text-amber-400 font-semibold transition-colors">Admin Portal</Link></li>

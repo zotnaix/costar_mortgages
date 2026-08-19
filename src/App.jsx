@@ -5,9 +5,9 @@ import MortgageProgramsPage from './pages/MortgagePrograms'
 import MortgageProgramDetailPage from './pages/MortgageProgramDetail'
 import RefinancePage from './pages/Refinance'
 import MortgageCalculatorPage from './pages/MortgageCalculatorPage'
-import BlogPage from './pages/Blog'
-import BlogPostDetailPage from './pages/BlogPostDetail'
-import ServicesPage from './pages/Services'
+// import BlogPage from './pages/Blog'
+// import BlogPostDetailPage from './pages/BlogPostDetail'
+// import ServicesPage from './pages/Services'
 import RecentFundingsPage from './pages/RecentFundings'
 import AboutPage from './pages/About'
 import ContactPage from './pages/Contact'
@@ -120,8 +120,8 @@ export default function App(){
 
                 <Link to="/refinance">Refinance</Link>
                 {/* <Link to="/calculator">Calculator</Link> */}
-                <Link to="/blog">Blog</Link>
-                <Link to="/services">Services</Link>
+                {/* <Link to="/blog">Blog</Link> */}
+                {/* <Link to="/services">Services</Link> */}
                 <Link to="/about">About Us</Link>
                 <Link to="/contact" className="nav-cta-btn">Get Started</Link>
               </nav>
@@ -155,9 +155,9 @@ export default function App(){
                 <Route path="/mortgages/:id" element={<MortgageProgramDetailPage />} />
                 <Route path="/refinance" element={<RefinancePage />} />
                 {/* <Route path="/calculator" element={<MortgageCalculatorPage />} /> */}
-                <Route path="/blog" element={<BlogPage />} />
-                <Route path="/blog/:id" element={<BlogPostDetailPage />} />
-                <Route path="/services" element={<ServicesPage />} />
+                {/* <Route path="/blog" element={<BlogPage />} /> */}
+                {/* <Route path="/blog/:id" element={<BlogPostDetailPage />} /> */}
+                {/* <Route path="/services" element={<ServicesPage />} /> */}
                 <Route path="/track-record" element={<RecentFundingsPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
@@ -190,8 +190,8 @@ export default function App(){
                 <div className="border-t border-slate-800 my-1"></div>
 
                 <Link to="/refinance" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Refinance Portal</Link>
-                <Link to="/blog" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Mortgage Blog</Link>
-                <Link to="/services" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Services</Link>
+                {/* <Link to="/blog" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Mortgage Blog</Link> */}
+                {/* <Link to="/services" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Services</Link> */}
                 <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">About Us</Link>
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-3 py-3.5 px-6 text-slate-950 font-black uppercase text-xs tracking-wider bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 rounded-xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-center">Get Started</Link>
               </nav>

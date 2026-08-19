@@ -49,7 +49,7 @@ export default function ContactPage() {
                 Connect With Us
               </h1>
               <p className="text-slate-300 text-sm leading-relaxed mb-8">
-                Get custom rate quotes and mortgage guidance in Denver and Highlands Ranch, CO.
+                Get custom rate quotes and mortgage guidance in Denver Metro, Colorado.
               </p>
 
               <ul className="space-y-6 text-sm font-medium">

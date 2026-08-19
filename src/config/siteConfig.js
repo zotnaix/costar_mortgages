@@ -27,19 +27,19 @@ export const siteConfig = {
   // Official Contact & Office Information (Sathya R Narayan)
   contact: {
     brokerName: 'Sathya R Narayan',
-    address: 'Denver, CO',
-    cityStateZip: 'Denver, CO',
-    fullAddress: 'Denver, CO',
+    address: 'Denver Metro, Colorado',
+    cityStateZip: 'Denver Metro, Colorado',
+    fullAddress: 'Denver Metro, Colorado',
     phone: '+1 303-886-3621',
     email: 'costarmortgages@gmail.com',
-    googleMapsEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent('Denver, CO')}&output=embed`
+    googleMapsEmbedUrl: `https://www.google.com/maps?q=${encodeURIComponent('Denver Metro, Colorado')}&output=embed`
   },
 
-  // Service Areas (Denver Colorado Metro)
+  // Service Areas (Denver Metro Colorado)
   serviceAreas: [
-    'Denver', 'Highlands Ranch', 'Englewood', 'Lone Tree', 'Parker', 
+    'Denver Metro', 'Denver', 'Englewood', 'Lone Tree', 'Parker', 
     'Castle Pines', 'Castle Rock', 'Greenwood Village', 
-    'Centennial', 'Aurora', 'Thornton', 'Broomfield', 'Denver Metro Area'
+    'Centennial', 'Aurora', 'Thornton', 'Broomfield', 'Colorado'
   ],
 
   // Accurate Service Descriptions (Compliant)
@@ -63,8 +63,8 @@ export const siteConfig = {
   navLinks: [
     { label: 'Loan Programs', path: '/mortgages' },
     { label: 'Refinance', path: '/refinance' },
-    { label: 'Blog', path: '/blog' },
-    { label: 'Services', path: '/services' },
+    // { label: 'Blog', path: '/blog' },
+    // { label: 'Services', path: '/services' },
     { label: 'About Us', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ],

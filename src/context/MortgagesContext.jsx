@@ -21,7 +21,7 @@ const defaultTestimonials = [
     id: 't-2',
     quote: "We refinanced our home with Co Star Mortgages and saved $410 per month while dropping our debt. The team made the closing process completely effortless.",
     author: "David & Sarah Jenkins",
-    role: "Cash-Out Refinance in Highlands Ranch, CO • Verified Borrower",
+    role: "Cash-Out Refinance in Denver Metro, CO • Verified Borrower",
     initials: "DJ",
     bgColor: "bg-blue-500/10 text-blue-400 border-blue-500/20"
   },

@@ -1,6 +1,6 @@
 # Co Star Mortgages Website
 
-Official web application for **Co Star Mortgages** — Licensed Mortgage Brokerage serving Denver, Highlands Ranch, and all of Colorado.
+Official web application for **Co Star Mortgages** — Licensed Mortgage Brokerage serving Denver Metro, Colorado.
 
 - **Broker / Principal:** Sathya R Narayan
 - **NMLS Unique ID:** 2042475

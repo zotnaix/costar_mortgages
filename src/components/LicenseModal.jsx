@@ -62,7 +62,7 @@ export default function LicenseModal({ isOpen, onClose }) {
           </div>
 
           <p className="text-xs text-slate-500 leading-relaxed">
-            Sathya R Narayan (NMLS Unique ID: 2042475) operates in full compliance with state and federal lending regulations, providing equal housing opportunity financing in Highlands Ranch, Colorado.
+            Sathya R Narayan (NMLS Unique ID: 2042475) operates in full compliance with state and federal lending regulations, providing equal housing opportunity financing in Denver Metro, Colorado.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row gap-3">

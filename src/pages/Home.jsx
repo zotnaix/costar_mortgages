@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <SEO 
-        title="Denver & Highlands Ranch Mortgage Broker"
+        title="Denver Metro, Colorado Mortgage Broker"
         description="Explore Colorado mortgage options with licensed broker Sathya R Narayan (NMLS #2042475). Conventional, FHA, VA, Jumbo loans, and refinancing."
         canonicalUrl="/"
         schema={getBrokerageSchema()}
@@ -184,7 +184,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED MORTGAGE BLOG ARTICLES */}
+      {/* FEATURED MORTGAGE BLOG ARTICLES (Temporarily hidden - uncomment when activating blog) */}
+      {/* 
       <section className="py-20 bg-slate-100 max-w-full px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-4">
@@ -225,6 +226,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CORE LOAN PROGRAMS SECTION - SUMMARIZED */}
       <section className="py-20 max-w-7xl mx-auto px-6">

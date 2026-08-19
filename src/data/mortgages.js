@@ -96,7 +96,7 @@ export const loanPrograms = [
     id: 'jumbo-loans',
     title: 'Jumbo & Non-Conforming Loans',
     tagline: 'Financing solutions for luxury properties exceeding conforming limits.',
-    intro: 'Competitive financing tailored for higher-value homes in Denver and Highlands Ranch.',
+    intro: 'Competitive financing tailored for higher-value homes across Denver Metro, Colorado.',
     termOptions: ['30-Year Fixed', '15-Year Fixed', '7/1 ARM'],
     keyFeatures: [
       'Loan amounts exceeding standard conforming limits',
@@ -137,71 +137,85 @@ export const loanPrograms = [
       'Maximizes short-term interest savings',
       'Adjustment caps protect against sudden spikes'
     ],
-    cons: [
-      'Rate can adjust after the fixed period ends'
+      'Lower initial monthly payments compared to standard fixed-rate loans',
+      'Periodic rate caps that limit annual and lifetime adjustments',
+      'Opportunity to build equity faster during initial low-rate period',
+      'Convertible options to fixed rate during designated windows'
     ],
-    eligibility: 'Great for borrowers seeking lower initial rates with plans to move or refinance.',
+    pros: [
+      'Lower interest rates during the initial intro period (5, 7, or 10 years)',
+      'Ideal for borrowers planning to move or refinance within a few years',
+      'Increased purchasing power during the fixed interest rate window'
+    ],
+    cons: [
+      'Rate may increase after the initial intro period depending on index adjustments',
+      'Monthly payments can fluctuate after the introductory period expires',
+      'Requires planning for potential future rate adjustments'
+    ],
+    idealFor: 'Homeowners or investors planning to sell, relocate, or refinance before the introductory fixed-rate period ends.',
     requiredDocs: [
-      'Pay stubs and W-2 statements',
-      'Bank statement reserves',
-      'Income documentation'
+      '30 days most recent paystubs',
+      'Last 2 years W-2 statements and federal tax filings',
+      '2 months bank statements for down payment source verification',
+      'Government-issued identification'
     ]
   },
   {
     id: 'refinance-cashout',
-    title: 'Refinance & Cash-Out',
-    tagline: 'Explore lowering your payment, shortening your term, or tapping equity.',
-    intro: 'Restructure your existing mortgage to lower monthly payments or access built-up equity.',
+    title: 'Refinance & Cash-Out Loans',
+    tagline: 'Lower your payment, eliminate PMI, or access built-up home equity.',
+    intro: 'Replace your existing mortgage with terms that better suit your financial goals.',
     termOptions: ['30-Year Fixed', '20-Year Fixed', '15-Year Fixed'],
     keyFeatures: [
-      'Rate & Term: Lower your interest rate or shorten your loan term',
-      'Cash-Out: Access home equity for renovations or debt consolidation',
-      'PMI Removal: Eliminate PMI if your property value has risen',
-      'Streamlined digital application process'
+      'Rate & term refinance to secure lower monthly payments or shorten term',
+      'Cash-out refinance to consolidate debts or fund improvements',
+      'Opportunity to eliminate Private Mortgage Insurance (PMI)',
+      'Streamline refinance options available for FHA and VA loans'
     ],
     pros: [
-      'Potential monthly payment reduction',
-      'Consolidate high-interest debt',
-      'Closing costs can be structured into the loan'
+      'Potentially reduce your monthly payment or interest paid over loan life',
+      'Tap into built-up property equity for renovations or major goals',
+      'Switch from an adjustable-rate to a secure fixed-rate loan'
     ],
     cons: [
-      'Extends repayment timeline if restarting a 30-year term',
-      'Appraisal may be required based on equity'
+      'Closing costs apply (though often financeable into the loan amount)',
+      'Extending loan term back to 30 years may increase total lifetime interest',
+      'Appraisal may be required depending on property equity position'
     ],
-    eligibility: 'Available to homeowners with sufficient equity and steady income.',
+    idealFor: 'Current homeowners wanting to lower their interest rate, shorten their loan term, or access home equity for personal financial goals.',
     requiredDocs: [
-      'Current mortgage statement',
-      'Homeowner insurance declaration',
-      'Recent pay stubs and W-2 forms',
-      'Bank statements'
+      'Current mortgage statement and homeowners insurance declaration',
+      'Most recent property tax statement or escrow analysis',
+      '30 days paystubs and last 2 years W-2s / Tax Returns',
+      'Government-issued identification'
     ]
   }
 ]
 
-export const recentFundedLoans = [
+export const recentFundings = [
   {
     id: 'funded-englewood-refi',
     title: 'Englewood Cash-Out Refinance',
     cityState: 'Englewood, CO',
-    loanType: 'Cash-Out Refinance',
+    loanType: '30-Year Fixed Cash-Out',
     loanAmount: '$485,000',
     interestRate: '5.875%',
-    monthlySavings: 'Debt Consolidation',
+    monthlySavings: '$380 / month',
     turnaroundDays: 'Efficient Process',
     headline: 'Consolidated high-interest debt & structured lower monthly outlay',
     story: 'The borrower structured a 5.875% rate on their Englewood property, using built-up home equity to consolidate high-interest obligations and streamline their monthly finances.'
   },
   {
-    id: 'funded-highlands-ranch-va',
-    title: 'Highlands Ranch VA Purchase',
-    cityState: 'Highlands Ranch, CO',
+    id: 'funded-denver-metro-va',
+    title: 'Denver Metro VA Purchase',
+    cityState: 'Denver Metro, CO',
     loanType: 'VA 30-Year Fixed',
     loanAmount: '$620,000',
     interestRate: '5.750%',
     monthlySavings: 'No Monthly PMI',
     turnaroundDays: 'On-Time Closing',
     headline: 'Veteran family secured VA home loan with zero monthly PMI',
-    story: 'Helped an Army veteran and their family move into their home in Highlands Ranch with VA loan benefits and zero monthly mortgage insurance fees.'
+    story: 'Helped an Army veteran and their family move into their home in Denver Metro, Colorado with VA loan benefits and zero monthly mortgage insurance fees.'
   },
   {
     id: 'funded-parker-conventional',

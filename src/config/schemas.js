@@ -26,18 +26,17 @@ export const getBrokerageSchema = () => ({
   },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Denver',
-    addressRegion: 'CO',
+    addressLocality: 'Denver Metro',
+    addressRegion: 'Colorado',
     addressCountry: 'US'
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '39.5436',
-    longitude: '-104.9961'
+    latitude: '39.7392',
+    longitude: '-104.9903'
   },
   areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Denver, Colorado' },
-    { '@type': 'AdministrativeArea', name: 'Highlands Ranch, Colorado' },
+    { '@type': 'AdministrativeArea', name: 'Denver Metro, Colorado' },
     { '@type': 'State', name: 'Colorado' }
   ],
   sameAs: [

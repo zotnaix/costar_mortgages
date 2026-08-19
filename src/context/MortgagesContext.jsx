@@ -50,7 +50,11 @@ export function MortgagesProvider({ children }) {
 
   // Admin Auth state
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(() => {
-    return sessionStorage.getItem(STORAGE_KEY_AUTH) === 'true'
+    try {
+      return sessionStorage.getItem(STORAGE_KEY_AUTH) === 'true'
+    } catch (e) {
+      return false
+    }
   })
 
   // Save leads to localStorage
@@ -66,7 +70,9 @@ export function MortgagesProvider({ children }) {
   const login = (username, password) => {
     if (username === 'admin' && password === 'admin') {
       setIsAdminLoggedIn(true)
-      sessionStorage.setItem(STORAGE_KEY_AUTH, 'true')
+      try {
+        sessionStorage.setItem(STORAGE_KEY_AUTH, 'true')
+      } catch (e) {}
       return true
     }
     return false
@@ -74,7 +80,9 @@ export function MortgagesProvider({ children }) {
 
   const logout = () => {
     setIsAdminLoggedIn(false)
-    sessionStorage.removeItem(STORAGE_KEY_AUTH)
+    try {
+      sessionStorage.removeItem(STORAGE_KEY_AUTH)
+    } catch (e) {}
   }
 
   // Lead Actions

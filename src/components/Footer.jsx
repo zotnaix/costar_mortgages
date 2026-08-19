@@ -14,7 +14,7 @@ export default function Footer() {
             {/* Brand & Broker Disclosure Column */}
             <div className="md:col-span-1">
               <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center gap-3 mb-4">
-                <img src="/logo-white.svg" alt="Co Star Mortgages Logo" className="h-10 w-auto" />
+                <img src={siteConfig.logoWhite} alt="Co Star Mortgages Logo" className="h-10 sm:h-12 w-auto object-contain" />
                 <span className="text-2xl font-extrabold tracking-tight text-white">{siteConfig.brandName}</span>
               </Link>
               

@@ -24,7 +24,7 @@ export default function SEO({
   const finalDescription = description || siteConfig.seo?.defaultDescription || `${siteConfig.brandName} offers professional mortgage and refinancing solutions in Colorado.`
   const domain = siteConfig.domain || 'https://costarmortgages.com'
   const finalCanonical = canonicalUrl ? `${domain}${canonicalUrl}` : domain
-  const finalImage = ogImage || `${domain}/logo-white.svg`
+  const finalImage = ogImage || `${domain}${siteConfig.logoWhite}`
   const robotsDirective = noIndex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 
   // Development warnings for SEO best practice length enforcement

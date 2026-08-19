@@ -85,9 +85,9 @@ export default function App(){
               <div className="brand">
                 <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center gap-3 sm:gap-4">
                   <img 
-                    src={isHome ? "/logo-white.svg" : "/logo.svg"} 
+                    src={isHome ? siteConfig.logoWhite : siteConfig.logoDark} 
                     alt="Co Star Mortgages Logo" 
-                    className="h-11 sm:h-14 w-auto transition-all duration-200" 
+                    className="h-11 sm:h-14 w-auto object-contain transition-all duration-200" 
                   />
                   <span className="brand-title hidden sm:block text-2xl sm:text-3xl font-black tracking-tight">Co Star Mortgages</span>
                 </Link>

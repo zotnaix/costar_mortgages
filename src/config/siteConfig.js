@@ -14,8 +14,8 @@ export const siteConfig = {
   },
   tagline: 'Where Your Home Story Shines',
   welcomeText: "Fast, transparent home loans and friendly mortgage guidance across Denver, Colorado.",
-  logoDark: '/logo.svg',
-  logoWhite: '/logo-white.svg',
+  logoDark: '/media/LOGO.png',
+  logoWhite: '/media/WHITE LOGO.png',
   nmlsId: '2042475',
   
   // NMLS & State Mortgage Licensing Disclosures

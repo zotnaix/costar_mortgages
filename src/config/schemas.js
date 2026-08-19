@@ -12,8 +12,8 @@ export const getBrokerageSchema = () => ({
   name: siteConfig.brandName || 'Co Star Mortgages',
   legalName: siteConfig.companyName || siteConfig.brandName || 'Co Star Mortgages Inc.',
   url: siteConfig.domain || 'https://costarmortgages.com',
-  logo: `${siteConfig.domain || 'https://costarmortgages.com'}/logo.svg`,
-  image: `${siteConfig.domain || 'https://costarmortgages.com'}/logo-white.svg`,
+  logo: `${siteConfig.domain || 'https://costarmortgages.com'}${siteConfig.logoDark}`,
+  image: `${siteConfig.domain || 'https://costarmortgages.com'}${siteConfig.logoWhite}`,
   description: siteConfig.welcomeText || siteConfig.tagline || 'Home loans in Denver, CO',
   telephone: siteConfig.contact?.phone || '+1 303-886-3621',
   email: siteConfig.contact?.email || 'costarmortgages@gmail.com',
@@ -51,7 +51,7 @@ export const getArticleSchema = (article = {}) => ({
   '@type': 'Article',
   headline: article.title || '',
   description: article.excerpt || article.summary || '',
-  image: article.coverImage || `${siteConfig.domain || 'https://costarmortgages.com'}/logo-white.svg`,
+  image: article.coverImage || `${siteConfig.domain || 'https://costarmortgages.com'}${siteConfig.logoWhite}`,
   author: {
     '@type': 'Person',
     name: article.author || siteConfig.broker?.name || siteConfig.brokerName || 'Sathya R Narayan'
@@ -61,7 +61,7 @@ export const getArticleSchema = (article = {}) => ({
     name: siteConfig.brandName || 'Co Star Mortgages',
     logo: {
       '@type': 'ImageObject',
-      url: `${siteConfig.domain || 'https://costarmortgages.com'}/logo.svg`
+      url: `${siteConfig.domain || 'https://costarmortgages.com'}${siteConfig.logoDark}`
     }
   },
   datePublished: article.date || new Date().toISOString().split('T')[0],

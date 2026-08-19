@@ -108,8 +108,8 @@ export default function AdminPage() {
         <SEO title="Admin Portal" noIndex={true} canonicalUrl="/admin" />
         <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 p-8 sm:p-10">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 text-amber-400 mb-4 shadow-lg">
-              <img src="/logo.svg" alt="Co Star Mortgages" className="w-10 h-10 object-contain" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-slate-900 text-amber-400 mb-4 shadow-lg p-2">
+              <img src={siteConfig.logoWhite} alt="Co Star Mortgages" className="w-10 h-10 object-contain" />
             </div>
             <h1 className="text-2xl font-black text-slate-900 tracking-tight">Co Star Mortgages Admin</h1>
             <p className="text-xs text-slate-500 mt-1">Sign in to manage borrower leads &amp; rate quotes</p>
@@ -174,7 +174,7 @@ export default function AdminPage() {
       <header className="bg-slate-950 text-white sticky top-0 z-40 shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/logo-white.svg" alt="Logo" className="h-8 w-auto" />
+            <img src={siteConfig.logoWhite} alt="Logo" className="h-8 w-auto object-contain" />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-lg font-black tracking-tight leading-none">Co Star Mortgages Admin</h1>

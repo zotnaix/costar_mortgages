@@ -127,16 +127,6 @@ export const loanPrograms = [
     intro: 'Enjoy lower initial payments during an introductory fixed period before adjusting periodically.',
     termOptions: ['5/1 ARM', '7/1 ARM', '10/1 ARM'],
     keyFeatures: [
-      'Lower initial rate during the fixed introductory period',
-      'Rate caps provide structure against steep adjustments',
-      'Ideal for homeowners planning to move or refinance in 5–10 years',
-      'Conforming and jumbo options available'
-    ],
-    pros: [
-      'Lower initial monthly payment',
-      'Maximizes short-term interest savings',
-      'Adjustment caps protect against sudden spikes'
-    ],
       'Lower initial monthly payments compared to standard fixed-rate loans',
       'Periodic rate caps that limit annual and lifetime adjustments',
       'Opportunity to build equity faster during initial low-rate period',
@@ -192,7 +182,7 @@ export const loanPrograms = [
   }
 ]
 
-export const recentFundings = [
+export const recentFundedLoans = [
   {
     id: 'funded-englewood-refi',
     title: 'Englewood Cash-Out Refinance',
@@ -230,6 +220,8 @@ export const recentFundings = [
     story: 'Our digital pre-approval process allowed these buyers to present a clear, competitive offer that got accepted in a competitive Parker neighborhood.'
   }
 ]
+
+export const recentFundings = recentFundedLoans
 
 export function getLoanProgramById(id) {
   return loanPrograms.find(p => p.id === id) || loanPrograms[0]

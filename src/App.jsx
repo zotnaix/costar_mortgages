@@ -14,6 +14,7 @@ import ContactPage from './pages/Contact'
 import AdminPage from './pages/Admin'
 import Footer from './components/Footer'
 import { MortgagesProvider } from './context/MortgagesContext'
+import { siteConfig } from './config/siteConfig'
 
 export default function App(){
   const location = useLocation()
@@ -26,7 +27,7 @@ export default function App(){
   // Enforce tab name to start with "Co Star Mortgages LLC | " across all pages
   React.useEffect(() => {
     const pageTitles = {
-      '/': 'Denver Home Loans & Refinancing',
+      '/': siteConfig.tagline || 'Where Your Home Story Shines',
       '/mortgages': 'Mortgage Loan Programs',
       '/mortgages/conventional-loans': 'Conventional Home Loans',
       '/mortgages/fha-loans': 'FHA Home Loans',

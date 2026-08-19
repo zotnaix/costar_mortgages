@@ -19,7 +19,7 @@ export default function SEO({
 }) {
   const finalTitle = title 
     ? (title.startsWith('Co Star Mortgages LLC | ') ? title : `Co Star Mortgages LLC | ${title}`)
-    : `Co Star Mortgages LLC | ${siteConfig.tagline || 'Denver Home Loans & Refinancing'}`
+    : `Co Star Mortgages LLC | ${siteConfig.tagline || 'Where Your Home Story Shines'}`
 
   const finalDescription = description || siteConfig.seo?.defaultDescription || `${siteConfig.brandName} offers professional mortgage and refinancing solutions in Colorado.`
   const domain = siteConfig.domain || 'https://costarmortgages.com'

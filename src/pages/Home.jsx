@@ -29,8 +29,40 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                 Where Your <br />
                 Home Story{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">
-                  Shines.
+                <span className="relative inline-block group cursor-default">
+                  <span className="text-shiny-amber-hover transition-transform duration-300 group-hover:scale-105 inline-block">
+                    Shines.
+                  </span>
+
+                  {/* Primary Twinkling Sparkle - Top Right */}
+                  <svg 
+                    className="absolute -top-3.5 -right-6 sm:-top-5 sm:-right-8 w-6 h-6 sm:w-8 sm:h-8 text-amber-300 pointer-events-none sparkle-hover-target sparkle-hover-target-1" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
+
+                  {/* Secondary Twinkling Sparkle - Top Left */}
+                  <svg 
+                    className="absolute -top-2.5 -left-3 sm:-top-3 sm:-left-4 w-4 h-4 sm:w-5 sm:h-5 text-amber-200 pointer-events-none sparkle-hover-target sparkle-hover-target-2" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
+
+                  {/* Subtle Accent Sparkle - Bottom */}
+                  <svg 
+                    className="absolute -bottom-2 right-4 w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-100 pointer-events-none sparkle-hover-target sparkle-hover-target-3" 
+                    viewBox="0 0 24 24" 
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                  </svg>
                 </span>
               </h1>
 

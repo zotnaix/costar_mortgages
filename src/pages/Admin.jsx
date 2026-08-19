@@ -23,6 +23,57 @@ export default function AdminPage() {
   // Filter state: 'all', 'Not Done Yet', 'In Progress', 'Done'
   const [statusFilter, setStatusFilter] = useState('all')
 
+  // Export Leads to CSV (Compatible with Excel & Google Sheets)
+  const exportToCSV = () => {
+    if (leads.length === 0) {
+      alert('No inquiries available to export.')
+      return
+    }
+
+    const headers = [
+      'Submission Date',
+      'Borrower Name',
+      'Email Address',
+      'Phone Number',
+      'Loan Goal / Purpose',
+      'Property Type',
+      'Estimated Loan Amount',
+      'Credit Score Tier',
+      'CRM Status',
+      'Borrower Notes / Message'
+    ]
+
+    const rows = leads.map(lead => [
+      lead.date || '',
+      lead.fullName || lead.name || '',
+      lead.email || '',
+      lead.phone || '',
+      lead.loanPurpose || lead.refiGoal || 'Purchase',
+      lead.propertyType || 'Single Family',
+      lead.estimatedPrice || lead.targetAmount || lead.estimatedBalance || '',
+      lead.creditScore || '',
+      lead.status || 'Not Done Yet',
+      lead.message || ''
+    ])
+
+    const csvContent = [
+      headers.map(h => `"${h.replace(/"/g, '""')}"`).join(','),
+      ...rows.map(row => row.map(val => `"${String(val).replace(/"/g, '""')}"`).join(','))
+    ].join('\r\n')
+
+    // Include UTF-8 Byte Order Mark (BOM) so Excel & Google Sheets decode UTF-8 cleanly
+    const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    const dateStr = new Date().toISOString().split('T')[0]
+    link.setAttribute('href', url)
+    link.setAttribute('download', `costar_mortgages_leads_${dateStr}.csv`)
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
+
   const handleLoginSubmit = (e) => {
     e.preventDefault()
     setLoginError('')
@@ -187,18 +238,31 @@ export default function AdminPage() {
               <p className="text-xs text-slate-500">Manage lead statuses, contact details, and loan requirements.</p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
               {leads.length > 0 && (
-                <button
-                  onClick={() => {
-                    if (window.confirm('Are you sure you want to clear all inquiries?')) {
-                      clearAllLeads()
-                    }
-                  }}
-                  className="px-4 py-2 bg-rose-50 text-rose-700 hover:bg-rose-100 text-xs font-bold rounded-xl transition-all border border-rose-200 cursor-pointer"
-                >
-                  🗑️ Clear All Inquiries
-                </button>
+                <>
+                  <button
+                    onClick={exportToCSV}
+                    title="Download CSV spreadsheet file compatible with Excel and Google Sheets"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Download CSV</span>
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      if (window.confirm('Are you sure you want to clear all inquiries?')) {
+                        clearAllLeads()
+                      }
+                    }}
+                    className="px-3.5 py-2 bg-rose-50 text-rose-700 hover:bg-rose-100 text-xs font-bold rounded-xl transition-all border border-rose-200 cursor-pointer"
+                  >
+                    Clear All
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -224,7 +288,11 @@ export default function AdminPage() {
 
           {filteredLeads.length === 0 ? (
             <div className="text-center py-16 text-slate-400 text-xs space-y-2">
-              <div className="text-3xl">📥</div>
+              <div className="w-12 h-12 mx-auto rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                </svg>
+              </div>
               <div className="font-bold text-slate-600">No Inquiries Found</div>
               <p className="text-slate-400">
                 {statusFilter === 'all' 
@@ -279,9 +347,9 @@ export default function AdminPage() {
                                 : 'bg-amber-50 text-amber-700 border-amber-300'
                             }`}
                           >
-                            <option value="Not Done Yet">⏳ Not Done Yet</option>
-                            <option value="In Progress">🔄 In Progress</option>
-                            <option value="Done">✅ Done</option>
+                            <option value="Not Done Yet">Not Done Yet</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Done">Done</option>
                           </select>
                         </td>
                         <td className="py-3.5 px-4 text-right">
@@ -290,7 +358,9 @@ export default function AdminPage() {
                             title="Delete Lead"
                             className="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer"
                           >
-                            🗑️
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
                           </button>
                         </td>
                       </tr>

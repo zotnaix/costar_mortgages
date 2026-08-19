@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Routes, Route, useLocation } from 'react-router-dom'
+import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import MortgageProgramsPage from './pages/MortgagePrograms'
 import MortgageProgramDetailPage from './pages/MortgageProgramDetail'
@@ -56,6 +56,7 @@ export default function App(){
       <MortgagesProvider>
         <Routes location={location}>
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MortgagesProvider>
     )
@@ -67,6 +68,7 @@ export default function App(){
         <div key={location.pathname} className="page-transition">
           <Routes location={location}>
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </MortgagesProvider>
@@ -161,6 +163,11 @@ export default function App(){
                 <Route path="/track-record" element={<RecentFundingsPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                
+                {/* Auto-redirect deactivated/unknown pages to Home to prevent white screens */}
+                <Route path="/blog/*" element={<Navigate to="/" replace />} />
+                <Route path="/services" element={<Navigate to="/" replace />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </div>
           </div>

@@ -12,7 +12,11 @@ export default function AdminPage() {
     logout,
     clearAllLeads,
     deleteLead,
-    updateLeadStatus
+    updateLeadStatus,
+    fetchLeads,
+    isLoadingLeads,
+    leadsError,
+    isSupabaseConnected
   } = useMortgagesContext()
 
   // Login form state
@@ -168,16 +172,42 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-20">
       <header className="bg-slate-950 text-white sticky top-0 z-40 shadow-md">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img src="/logo-white.svg" alt="Logo" className="h-8 w-auto" />
             <div>
-              <h1 className="text-lg font-black tracking-tight leading-none">Co Star Mortgages Admin</h1>
-              <span className="text-[10px] text-slate-400">Borrower Leads &amp; Inquiries CRM</span>
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg font-black tracking-tight leading-none">Co Star Mortgages Admin</h1>
+                {isSupabaseConnected ? (
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" title="Connected to Supabase cloud database">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Supabase Live
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30" title="Running in Local Storage fallback mode">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    Local Mode
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] text-slate-400">Borrower Leads &amp; Inquiries CRM (Site ID: costar_mortgages)</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-semibold">
+          <div className="flex items-center gap-3 text-xs font-semibold">
+            {isSupabaseConnected && (
+              <button 
+                onClick={fetchLeads}
+                disabled={isLoadingLeads}
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-all cursor-pointer disabled:opacity-50"
+                title="Refresh leads from Supabase"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className={`w-3.5 h-3.5 ${isLoadingLeads ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                <span>{isLoadingLeads ? 'Refreshing...' : 'Refresh'}</span>
+              </button>
+            )}
             <Link to="/" target="_blank" className="px-3.5 py-2 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700">
               View Public Website ↗
             </Link>
@@ -189,6 +219,17 @@ export default function AdminPage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 pt-8">
+        {leadsError && (
+          <div className="mb-6 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="font-bold">Database Notice:</span> {leadsError}
+            </div>
+            <button onClick={fetchLeads} className="font-bold underline cursor-pointer hover:text-amber-950">
+              Retry Connection
+            </button>
+          </div>
+        )}
+
         {/* Dynamic Lead Status Summary Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div 

@@ -70,16 +70,16 @@ export default function Home() {
                 {siteConfig.welcomeText}
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] text-[#0d101d] font-black text-sm uppercase tracking-wider rounded-xl hover:from-[#fabe22] hover:to-[#fac536] transition-all shadow-xl shadow-[#f39c0a]/25 hover:scale-[1.02]"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] text-[#0d101d] font-extrabold text-xs sm:text-sm uppercase tracking-wider rounded-xl hover:from-[#fabe22] hover:to-[#fac536] transition-all shadow-xl shadow-[#f39c0a]/25 hover:scale-[1.02] text-center"
                 >
                   Get Pre-Approved
                 </Link>
                 <Link
                   to="/mortgages"
-                  className="w-full sm:w-auto px-7 py-3.5 bg-[#0d1629] border border-[#1d3465] text-slate-200 font-bold text-sm uppercase tracking-wider rounded-xl hover:bg-[#1d3465] hover:text-[#fac536] transition-all"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 bg-[#0d1629] border border-[#1d3465] text-slate-200 font-bold text-xs sm:text-sm uppercase tracking-wider rounded-xl hover:bg-[#1d3465] hover:text-[#fac536] transition-all text-center"
                 >
                   Explore Loan Programs
                 </Link>

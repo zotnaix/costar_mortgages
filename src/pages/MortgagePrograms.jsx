@@ -75,16 +75,16 @@ export default function MortgageProgramsPage() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+            <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-2.5 items-stretch">
               <Link
                 to={`/mortgages/${program.id}`}
-                className="flex-1 py-3 text-center text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0d101d] bg-slate-100 hover:bg-[#0d1629] hover:text-[#fac536] rounded-xl transition-all"
+                className="flex-1 py-2.5 px-3 text-center text-xs font-bold uppercase tracking-wider text-[#0d101d] bg-slate-100 hover:bg-[#0d1629] hover:text-[#fac536] rounded-xl transition-all flex items-center justify-center"
               >
                 View Details
               </Link>
               <Link
                 to="/contact"
-                className="flex-1 py-3 text-center text-xs sm:text-sm font-black uppercase tracking-wider text-[#0d101d] bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] rounded-xl transition-all shadow-md shadow-[#f39c0a]/20 hover:scale-[1.02]"
+                className="flex-1 py-2.5 px-3 text-center text-xs font-bold uppercase tracking-wider text-[#0d101d] bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] rounded-xl transition-all shadow-md shadow-[#f39c0a]/20 hover:scale-[1.02] flex items-center justify-center"
               >
                 Get Pre-Approved
               </Link>

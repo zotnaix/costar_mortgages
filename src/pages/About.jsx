@@ -36,13 +36,10 @@ export default function AboutPage(){
   return (
     <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
       {/* Hero Header */}
-      <section className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+      <section className="text-center max-w-2xl mx-auto mb-16">
         <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
           About Co Star Mortgages
         </h1>
-        <p className="mt-2 text-base text-slate-600 leading-relaxed">
-          Friendly guidance, clear rate options, and 20+ years of Colorado real estate experience.
-        </p>
       </section>
 
       {/* SATHYA R NARAYAN OFFICIAL PROFILE CARD */}

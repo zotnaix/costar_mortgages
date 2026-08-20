@@ -1,32 +1,39 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getLoanProgramById } from '../data/mortgages'
+import PageHeader from '../components/PageHeader'
 
 export default function MortgageProgramDetailPage() {
   const { id } = useParams()
   const program = getLoanProgramById(id)
 
-  return (
-    <main className="max-w-6xl mx-auto px-6 py-12 font-body text-base">
-      {/* Top Back Link */}
-      <div className="mb-6">
-        <Link to="/mortgages" className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#f39c0a] uppercase tracking-wider transition-colors">
-          ← Back to All Loan Programs
-        </Link>
+  if (!program) {
+    return (
+      <div>
+        <PageHeader 
+          title="Program Not Found" 
+          subtitle="The requested mortgage loan program could not be found."
+          breadcrumbs={[{ label: 'Loan Programs', path: '/mortgages' }, { label: 'Not Found' }]}
+        />
+        <main className="max-w-6xl mx-auto px-6 py-12">
+          <Link to="/mortgages" className="text-[#f39c0a] font-bold">← Back to All Loan Programs</Link>
+        </main>
       </div>
+    )
+  }
 
-      {/* Program Header Banner */}
-      <section className="bg-[#0d1629] text-white rounded-3xl p-8 sm:p-12 border border-[#1d3465] shadow-xl mb-10 relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black tracking-tight text-white leading-tight mb-4">
-            {program.title}
-          </h1>
+  return (
+    <div>
+      <PageHeader 
+        title={program.title}
+        subtitle={program.intro}
+        breadcrumbs={[
+          { label: 'Loan Programs', path: '/mortgages' },
+          { label: program.title }
+        ]}
+      />
 
-          <p className="text-[#738fc6] text-base leading-relaxed">
-            {program.intro}
-          </p>
-        </div>
-      </section>
+      <main className="max-w-6xl mx-auto px-6 py-12 font-body text-base">
 
       {/* Program Details Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -120,5 +127,6 @@ export default function MortgageProgramDetailPage() {
         </aside>
       </div>
     </main>
+    </div>
   )
 }

@@ -181,11 +181,6 @@ body.preloader-active .site-nav { opacity: 0 !important; pointer-events: none !i
   box-shadow: 0 8px 24px rgba(243, 156, 10, 0.6), 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.site-nav.solid .nav-links a.nav-cta-btn {
-  color: #0d101d !important;
-  text-shadow: none !important;
-}
-
 /* Nav dropdown styles */
 .site-nav .nav-dropdown {
   position: absolute;
@@ -213,8 +208,7 @@ body.preloader-active .site-nav { opacity: 0 !important; pointer-events: none !i
   flex-direction: column;
   gap: 2px;
 }
-.site-nav .nav-dropdown a,
-.site-nav.solid .nav-dropdown a {
+.site-nav .nav-dropdown a {
   margin-left: 0 !important;
   padding: 9px 12px !important;
   color: #e2e8f0 !important;
@@ -227,46 +221,22 @@ body.preloader-active .site-nav { opacity: 0 !important; pointer-events: none !i
   justify-content: space-between;
   transition: background-color 150ms ease, color 150ms ease;
 }
-.site-nav .nav-dropdown a:hover,
-.site-nav.solid .nav-dropdown a:hover {
+.site-nav .nav-dropdown a:hover {
   background-color: #1d3465 !important;
   color: #fac536 !important;
 }
 
-/* Solid nav variant for non-landing pages or scrolled state */
-.site-nav.solid { 
-  background: rgba(255, 255, 255, 0.96); 
-  color: var(--color-text); 
-  box-shadow: 0 4px 20px rgba(13, 16, 29, 0.08); 
-  backdrop-filter: blur(10px);
+/* Scrolled Navbar with dark glass styling */
+.site-nav.scrolled { 
+  padding: 12px 24px; 
+  background: rgba(13, 16, 29, 0.92); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(29, 52, 101, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
-.site-nav.solid .brand-title { color: #0d101d; text-shadow: none; }
-.site-nav.solid a { color: #0d101d; opacity: 1; }
-.site-nav.solid .nav-links a { background: transparent; text-shadow: none; font-weight: 600; }
-.site-nav.solid .nav-links a:hover { color: #f39c0a; }
-
-/* Toggle button styling */
-.nav-toggle-btn {
-  padding: 8px;
-  border-radius: 8px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: inherit;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 200ms ease, color 200ms ease;
-}
-.site-nav:not(.solid) .nav-toggle-btn { color: white; }
-.site-nav:not(.solid) .nav-toggle-btn:hover { background: rgba(255,255,255,0.15); }
-.site-nav.solid .nav-toggle-btn { color: var(--color-text); }
-.site-nav.solid .nav-toggle-btn:hover { background: rgba(13, 16, 29, 0.06); }
-
-/* Scrolled Navbar */
-.site-nav.scrolled { padding: 12px 20px; }
-.site-nav.scrolled:not(.solid) { background: rgba(13, 16, 29, 0.90); backdrop-filter: blur(10px); }
-.site-nav.scrolled .brand img { height: 38px; }
+.site-nav.scrolled .brand svg,
+.site-nav.scrolled .brand img { height: 42px; }
 
 /* Premium smooth scrollbar styling */
 ::-webkit-scrollbar {

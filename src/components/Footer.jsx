@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
 import LicenseModal from './LicenseModal'
+import BrandLogo from './BrandLogo'
 
 export default function Footer() {
   const [isLicenseOpen, setIsLicenseOpen] = useState(false)
@@ -13,9 +14,8 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             {/* Brand & Broker Disclosure Column */}
             <div className="md:col-span-1">
-              <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center gap-3 mb-4">
-                <img src={siteConfig.logoWhite} alt="Co Star Mortgages Logo" className="h-10 sm:h-12 w-auto object-contain" />
-                <span className="text-2xl font-heading font-extrabold tracking-tight text-white">{siteConfig.brandName}</span>
+              <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="inline-flex items-center mb-4">
+                <BrandLogo isWhite={true} className="h-10 sm:h-12 w-auto max-w-[240px]" />
               </Link>
               
               <div className="mb-3 text-[14px] text-slate-300">

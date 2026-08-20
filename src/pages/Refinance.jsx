@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMortgagesContext } from '../context/MortgagesContext'
+import PageHeader from '../components/PageHeader'
 
 export default function RefinancePage() {
   const { submitLead } = useMortgagesContext()
@@ -44,16 +45,14 @@ export default function RefinancePage() {
   ]
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
-      {/* Hero Title */}
-      <section className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
-          Refinance Your Mortgage
-        </h1>
-        <p className="text-slate-600 text-base leading-relaxed">
-          Lower your monthly payments, access equity, or shorten your loan term.
-        </p>
-      </section>
+    <div>
+      <PageHeader 
+        title="Refinance Your Mortgage"
+        subtitle="Lower your monthly payments, access home equity, or shorten your loan term with custom Denver rate options."
+        breadcrumbs={[{ label: 'Refinance' }]}
+      />
+
+      <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
 
       {/* Refinance Inquiry Form */}
       <section id="refi-form" className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-lg max-w-3xl mx-auto mb-20">
@@ -155,5 +154,6 @@ export default function RefinancePage() {
         </div>
       </section>
     </main>
+    </div>
   )
 }

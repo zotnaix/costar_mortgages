@@ -13,6 +13,7 @@ import AboutPage from './pages/About'
 import ContactPage from './pages/Contact'
 import AdminPage from './pages/Admin'
 import Footer from './components/Footer'
+import BrandLogo from './components/BrandLogo'
 import { MortgagesProvider } from './context/MortgagesContext'
 import { siteConfig } from './config/siteConfig'
 
@@ -21,7 +22,7 @@ export default function App(){
   const isHome = location.pathname === '/'
   const isContact = location.pathname === '/contact'
   const isAdmin = location.pathname.startsWith('/admin')
-  const navClass = `site-nav${isHome ? '' : ' solid'}`
+  const navClass = 'site-nav'
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
   // Enforce tab name to start with "Co Star Mortgages LLC | " across all pages
@@ -83,13 +84,11 @@ export default function App(){
           <header className={navClass}>
             <div className="inner">
               <div className="brand">
-                <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center gap-3 sm:gap-4">
-                  <img 
-                    src={isHome ? siteConfig.logoWhite : siteConfig.logoDark} 
-                    alt="Co Star Mortgages Logo" 
-                    className="h-11 sm:h-14 w-auto object-contain transition-all duration-200" 
+                <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center">
+                  <BrandLogo 
+                    isWhite={true} 
+                    className="h-10 sm:h-12 md:h-14 w-auto max-w-[200px] sm:max-w-[260px] md:max-w-[280px]" 
                   />
-                  <span className="brand-title hidden sm:block text-2xl sm:text-3xl font-heading font-black tracking-tight">Co Star Mortgages</span>
                 </Link>
               </div>
 
@@ -150,7 +149,7 @@ export default function App(){
             </div>
           </header>
 
-          <div style={{ paddingTop: isHome ? 0 : 76 }}>
+          <div>
             <div key={location.pathname} className="page-transition">
               <Routes location={location}>
                 <Route path="/" element={<Home />} />

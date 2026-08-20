@@ -2,21 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { recentFundedLoans } from '../data/mortgages'
 import { useMortgagesContext } from '../context/MortgagesContext'
+import PageHeader from '../components/PageHeader'
 
 export default function RecentFundingsPage() {
   const { testimonials } = useMortgagesContext()
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
-      {/* Page Header */}
-      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
-          Recent Funded Loans &amp; Borrower Savings
-        </h1>
-        <p className="text-slate-600 text-base leading-relaxed">
-          Browse real funded loan transactions, rate savings metrics, and verified borrower experiences across Colorado.
-        </p>
-      </div>
+    <div>
+      <PageHeader 
+        title="Recent Funded Loans & Track Record"
+        subtitle="Browse real funded loan transactions, rate savings metrics, and verified borrower experiences across Colorado."
+        breadcrumbs={[{ label: 'Track Record' }]}
+      />
+
+      <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
 
       {/* Funded Loans Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -86,5 +85,6 @@ export default function RecentFundingsPage() {
         </Link>
       </div>
     </main>
+    </div>
   )
 }

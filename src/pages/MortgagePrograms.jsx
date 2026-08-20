@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { loanPrograms } from '../data/mortgages'
+import PageHeader from '../components/PageHeader'
 
 export default function MortgageProgramsPage() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -16,16 +17,14 @@ export default function MortgageProgramsPage() {
   })
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
-      {/* Header */}
-      <div className="mb-10 text-center sm:text-left">
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
-          Explore Home Loan Programs
-        </h1>
-        <p className="mt-2 text-slate-600 max-w-2xl text-base leading-relaxed">
-          Find the ideal mortgage program for your purchase or refinance goals.
-        </p>
-      </div>
+    <div>
+      <PageHeader 
+        title="Explore Home Loan Programs"
+        subtitle="Find the ideal mortgage program for your purchase or refinance goals across Denver Metro, Colorado."
+        breadcrumbs={[{ label: 'Loan Programs' }]}
+      />
+
+      <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
 
       {/* Search Bar */}
       <div className="mb-10 bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex justify-between items-center">
@@ -93,5 +92,6 @@ export default function MortgageProgramsPage() {
         ))}
       </div>
     </main>
+    </div>
   )
 }

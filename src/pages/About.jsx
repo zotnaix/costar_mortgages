@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { siteConfig } from '../config/siteConfig'
+import PageHeader from '../components/PageHeader'
 
 export default function AboutPage(){
   const brokerProducts = [
@@ -34,13 +35,14 @@ export default function AboutPage(){
   ]
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
-      {/* Hero Header */}
-      <section className="text-center max-w-2xl mx-auto mb-16">
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
-          About Co Star Mortgages
-        </h1>
-      </section>
+    <div>
+      <PageHeader 
+        title="About Co Star Mortgages"
+        subtitle="Licensed independent mortgage brokerage providing fast, transparent residential home loan guidance across Denver Metro, Colorado."
+        breadcrumbs={[{ label: 'About Us' }]}
+      />
+
+      <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
 
       {/* SATHYA R NARAYAN OFFICIAL PROFILE CARD */}
       <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl mb-20">
@@ -157,5 +159,6 @@ export default function AboutPage(){
         </div>
       </section>
     </main>
+    </div>
   )
 }

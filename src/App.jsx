@@ -89,7 +89,7 @@ export default function App(){
                     alt="Co Star Mortgages Logo" 
                     className="h-11 sm:h-14 w-auto object-contain transition-all duration-200" 
                   />
-                  <span className="brand-title hidden sm:block text-2xl sm:text-3xl font-black tracking-tight">Co Star Mortgages</span>
+                  <span className="brand-title hidden sm:block text-2xl sm:text-3xl font-heading font-black tracking-tight">Co Star Mortgages</span>
                 </Link>
               </div>
 
@@ -111,8 +111,8 @@ export default function App(){
                       <Link to="/mortgages/jumbo-loans">Jumbo &amp; Non-Conforming</Link>
                       <Link to="/mortgages/arm-loans">Adjustable-Rate (ARM)</Link>
                       <Link to="/mortgages/refinance-cashout">Refinance &amp; Cash-Out</Link>
-                      <div className="border-t border-slate-100 mt-1 pt-1">
-                        <Link to="/mortgages" className="text-amber-600 font-bold hover:text-amber-700">
+                      <div className="border-t border-[#1d3465] mt-1 pt-1">
+                        <Link to="/mortgages" className="text-[#fac536] font-bold hover:text-[#f39c0a]">
                           <span>View All Programs</span>
                           <span>→</span>
                         </Link>
@@ -176,32 +176,32 @@ export default function App(){
 
         {/* Mobile & Tablet navigation overlay drawer */}
         {mobileOpen && (
-          <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)}>
+          <div className="fixed inset-0 z-50 bg-[#0d101d]/70 backdrop-blur-md lg:hidden" onClick={() => setMobileOpen(false)}>
             <div 
-              className="bg-slate-900 text-white shadow-2xl border-b border-slate-800 p-6 absolute top-[68px] left-0 right-0 max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200" 
+              className="bg-[#0d1629] text-white shadow-2xl border-b border-[#1d3465] p-6 absolute top-[68px] left-0 right-0 max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200" 
               onClick={(e) => e.stopPropagation()}
             >
               <nav className="flex flex-col gap-3 text-center">
                 <div>
-                  <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Loan Programs</div>
+                  <div className="text-xs font-bold text-[#fac536] uppercase tracking-wider mb-2 font-heading">Loan Programs</div>
                   <div className="grid grid-cols-2 gap-2 text-xs mb-2">
-                    <Link to="/mortgages/conventional-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Conventional</Link>
-                    <Link to="/mortgages/fha-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">FHA Loans</Link>
-                    <Link to="/mortgages/va-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">VA Loans</Link>
-                    <Link to="/mortgages/jumbo-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Jumbo Loans</Link>
-                    <Link to="/mortgages/arm-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">ARM Loans</Link>
-                    <Link to="/mortgages/refinance-cashout" onClick={() => setMobileOpen(false)} className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700">Refinance</Link>
+                    <Link to="/mortgages/conventional-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">Conventional</Link>
+                    <Link to="/mortgages/fha-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">FHA Loans</Link>
+                    <Link to="/mortgages/va-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">VA Loans</Link>
+                    <Link to="/mortgages/jumbo-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">Jumbo Loans</Link>
+                    <Link to="/mortgages/arm-loans" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">ARM Loans</Link>
+                    <Link to="/mortgages/refinance-cashout" onClick={() => setMobileOpen(false)} className="p-2 bg-[#0d101d] border border-[#1d3465] rounded-lg hover:border-[#f39c0a] text-slate-200">Refinance</Link>
                   </div>
-                  <Link to="/mortgages" onClick={() => setMobileOpen(false)} className="text-xs font-bold text-amber-400 hover:underline">View All Programs →</Link>
+                  <Link to="/mortgages" onClick={() => setMobileOpen(false)} className="text-xs font-bold text-[#fac536] hover:underline">View All Programs →</Link>
                 </div>
 
-                <div className="border-t border-slate-800 my-1"></div>
+                <div className="border-t border-[#1d3465] my-1"></div>
 
-                <Link to="/refinance" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Refinance Portal</Link>
-                {/* <Link to="/blog" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Mortgage Blog</Link> */}
-                {/* <Link to="/services" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">Services</Link> */}
-                <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-amber-400 transition-colors">About Us</Link>
-                <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-3 py-3.5 px-6 text-slate-950 font-black uppercase text-xs tracking-wider bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 rounded-xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all text-center">Get Started</Link>
+                <Link to="/refinance" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-[#f39c0a] transition-colors">Refinance Portal</Link>
+                {/* <Link to="/blog" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-[#f39c0a] transition-colors">Mortgage Blog</Link> */}
+                {/* <Link to="/services" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-[#f39c0a] transition-colors">Services</Link> */}
+                <Link to="/about" onClick={() => setMobileOpen(false)} className="py-2 text-slate-200 font-semibold hover:text-[#f39c0a] transition-colors">About Us</Link>
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="mt-3 py-3.5 px-6 text-[#0d101d] font-black uppercase text-xs tracking-wider bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] rounded-xl shadow-lg shadow-[#f39c0a]/30 active:scale-95 transition-all text-center">Get Started</Link>
               </nav>
             </div>
           </div>

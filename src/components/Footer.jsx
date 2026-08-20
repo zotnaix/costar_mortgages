@@ -8,34 +8,34 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-800">
+      <footer className="bg-[#0d101d] text-white pt-16 pb-12 border-t border-[#1d3465] font-body text-base">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             {/* Brand & Broker Disclosure Column */}
             <div className="md:col-span-1">
               <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} className="flex items-center gap-3 mb-4">
                 <img src={siteConfig.logoWhite} alt="Co Star Mortgages Logo" className="h-10 sm:h-12 w-auto object-contain" />
-                <span className="text-2xl font-extrabold tracking-tight text-white">{siteConfig.brandName}</span>
+                <span className="text-2xl font-heading font-extrabold tracking-tight text-white">{siteConfig.brandName}</span>
               </Link>
               
-              <div className="mb-3 text-xs text-slate-300">
-                <span className="font-bold text-amber-400">{siteConfig.brokerName}</span>
-                <span className="block text-[11px] text-slate-400">Licensed Mortgage Broker • NMLS ID: {siteConfig.nmlsId}</span>
+              <div className="mb-3 text-[14px] text-slate-300">
+                <span className="font-bold text-[#fac536]">{siteConfig.brokerName}</span>
+                <span className="block text-[12px] text-[#738fc6]">Licensed Mortgage Broker • NMLS ID: {siteConfig.nmlsId}</span>
               </div>
 
-              <p className="text-slate-400 text-xs leading-relaxed mb-4">
+              <p className="text-[#738fc6] text-[14px] leading-relaxed mb-4">
                 {siteConfig.welcomeText}
               </p>
 
               <div className="flex items-center gap-3 pt-1">
-                <div className="w-8 h-8 rounded border border-slate-700 flex items-center justify-center bg-slate-900 text-amber-400" title="Equal Housing Opportunity">
+                <div className="w-8 h-8 rounded border border-[#1d3465] flex items-center justify-center bg-[#0d1629] text-[#f39c0a]" title="Equal Housing Opportunity">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                     <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.5L18.5 11H17v7H7v-7H5.5L12 5.5zM9 13h6v4H9v-4z"/>
                   </svg>
                 </div>
                 <button 
                   onClick={() => setIsLicenseOpen(true)}
-                  className="text-xs text-amber-400 hover:text-amber-300 font-bold underline underline-offset-2 transition-colors cursor-pointer text-left"
+                  className="text-[13px] text-[#fac536] hover:text-[#fabe22] font-bold underline underline-offset-2 transition-colors cursor-pointer text-left"
                 >
                   NMLS Unique ID: {siteConfig.nmlsId}
                 </button>
@@ -44,38 +44,36 @@ export default function Footer() {
 
             {/* Loan Program Links */}
             <div>
-              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Loan Programs</h3>
-              <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
-                <li><Link to="/mortgages/conventional-loans" className="hover:text-white transition-colors">Conventional Loans</Link></li>
-                <li><Link to="/mortgages/fha-loans" className="hover:text-white transition-colors">FHA Loans</Link></li>
-                <li><Link to="/mortgages/va-loans" className="hover:text-white transition-colors">VA Military Loans</Link></li>
-                <li><Link to="/mortgages/jumbo-loans" className="hover:text-white transition-colors">Jumbo Loans</Link></li>
-                <li><Link to="/refinance" className="hover:text-white transition-colors">Refinance &amp; Cash-Out</Link></li>
+              <h3 className="text-[13px] sm:text-[14px] font-heading font-bold text-slate-200 uppercase tracking-wider mb-4">Loan Programs</h3>
+              <ul className="space-y-2.5 text-[14px] text-[#738fc6] font-medium">
+                <li><Link to="/mortgages/conventional-loans" className="hover:text-[#fabe22] transition-colors">Conventional Loans</Link></li>
+                <li><Link to="/mortgages/fha-loans" className="hover:text-[#fabe22] transition-colors">FHA Loans</Link></li>
+                <li><Link to="/mortgages/va-loans" className="hover:text-[#fabe22] transition-colors">VA Military Loans</Link></li>
+                <li><Link to="/mortgages/jumbo-loans" className="hover:text-[#fabe22] transition-colors">Jumbo Loans</Link></li>
+                <li><Link to="/refinance" className="hover:text-[#fabe22] transition-colors">Refinance &amp; Cash-Out</Link></li>
               </ul>
             </div>
 
             {/* Advisory & Company */}
             <div>
-              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Company &amp; Media</h3>
-              <ul className="space-y-2.5 text-xs text-slate-400 font-medium">
-                {/* <li><Link to="/blog" className="hover:text-white transition-colors">Mortgage Blog &amp; Tips</Link></li> */}
-                {/* <li><Link to="/services" className="hover:text-white transition-colors">Mortgage Advisory Services</Link></li> */}
-                <li><Link to="/about" className="hover:text-white transition-colors">About Sathya R Narayan</Link></li>
-                <li><Link to="/contact" className="hover:text-white transition-colors">Book a Consultation</Link></li>
-                <li><Link to="/admin" className="hover:text-amber-400 font-semibold transition-colors">Admin Portal</Link></li>
+              <h3 className="text-[13px] sm:text-[14px] font-heading font-bold text-slate-200 uppercase tracking-wider mb-4">Company &amp; Media</h3>
+              <ul className="space-y-2.5 text-[14px] text-[#738fc6] font-medium">
+                <li><Link to="/about" className="hover:text-[#fabe22] transition-colors">About Sathya R Narayan</Link></li>
+                <li><Link to="/contact" className="hover:text-[#fabe22] transition-colors">Book a Consultation</Link></li>
+                <li><Link to="/admin" className="hover:text-[#fac536] font-semibold transition-colors">Admin Portal</Link></li>
               </ul>
             </div>
 
             {/* Social & Broker Profiles */}
             <div>
-              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-widest mb-4">Connect &amp; Profiles</h3>
+              <h3 className="text-[13px] sm:text-[14px] font-heading font-bold text-slate-200 uppercase tracking-wider mb-4">Connect &amp; Profiles</h3>
               <div className="flex items-center gap-3 mb-5">
                 {/* Facebook Button */}
                 <a 
                   href={siteConfig.socials.facebook}
                   target="_blank" 
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-500/50 flex items-center justify-center transition-all shadow-md"
+                  className="w-10 h-10 rounded-xl bg-[#0d1629] border border-[#1d3465] text-[#738fc6] hover:text-[#fac536] hover:border-[#f39c0a]/50 flex items-center justify-center transition-all shadow-md"
                   aria-label="Facebook Page"
                   title="Co Star Mortgages Facebook"
                 >
@@ -89,7 +87,7 @@ export default function Footer() {
                   href={siteConfig.socials.instagram}
                   target="_blank" 
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-amber-400 hover:border-amber-500/50 flex items-center justify-center transition-all shadow-md"
+                  className="w-10 h-10 rounded-xl bg-[#0d1629] border border-[#1d3465] text-[#738fc6] hover:text-[#fac536] hover:border-[#f39c0a]/50 flex items-center justify-center transition-all shadow-md"
                   aria-label="Instagram Profile"
                   title="Co Star Mortgages Instagram"
                 >
@@ -100,10 +98,10 @@ export default function Footer() {
 
                 {/* Broker Near Me Button */}
                 <a 
-                  href={siteConfig.socials.brokerNearMe}
+                  href={siteConfig.socials.brokerNearMe} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 font-black hover:bg-amber-400 flex items-center justify-center transition-all shadow-md"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] text-[#0d101d] font-black hover:from-[#fabe22] hover:to-[#fac536] flex items-center justify-center transition-all shadow-md"
                   aria-label="Broker Near Me Profile"
                   title="Sathya R Narayan on Broker Near Me"
                 >
@@ -111,7 +109,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              <ul className="space-y-2 text-xs text-slate-400">
+              <ul className="space-y-2 text-[14px] text-[#738fc6]">
                 <li>📍 {siteConfig.contact.fullAddress}</li>
                 <li>📞 {siteConfig.contact.phone}</li>
                 <li>✉️ {siteConfig.contact.email}</li>
@@ -120,15 +118,15 @@ export default function Footer() {
           </div>
 
           {/* Rate Disclaimer & Copyright */}
-          <div className="pt-8 border-t border-slate-800 text-[11px] text-slate-500 space-y-3">
+          <div className="pt-8 border-t border-[#1d3465] text-[12px] text-[#738fc6]/80 space-y-3">
             <p>
               * Interest rates and annual percentage rates (APR) displayed are for informational purposes only and subject to market changes. Sathya R Narayan (NMLS Unique ID: {siteConfig.nmlsId}). Equal Housing Opportunity lender.
             </p>
             <div className="flex flex-wrap justify-between items-center gap-4 pt-2">
               <div>© {new Date().getFullYear()} {siteConfig.companyName}. All rights reserved.</div>
               <div className="flex flex-wrap gap-4">
-                <a href={siteConfig.socials.brokerNearMe} target="_blank" rel="noreferrer" className="hover:text-amber-400 font-bold">BrokerNearMe Profile ↗</a>
-                <button onClick={() => setIsLicenseOpen(true)} className="underline hover:text-amber-400">NMLS ID: {siteConfig.nmlsId}</button>
+                <a href={siteConfig.socials.brokerNearMe} target="_blank" rel="noreferrer" className="hover:text-[#fac536] font-bold">BrokerNearMe Profile ↗</a>
+                <button onClick={() => setIsLicenseOpen(true)} className="underline hover:text-[#fac536] cursor-pointer">NMLS ID: {siteConfig.nmlsId}</button>
               </div>
             </div>
           </div>

@@ -7,13 +7,13 @@ export default function RecentFundingsPage() {
   const { testimonials } = useMortgagesContext()
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
+    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
       {/* Page Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-          Recent Funded Loans & Borrower Savings
+      <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
+          Recent Funded Loans &amp; Borrower Savings
         </h1>
-        <p className="text-slate-600 text-base">
+        <p className="text-slate-600 text-base leading-relaxed">
           Browse real funded loan transactions, rate savings metrics, and verified borrower experiences across Colorado.
         </p>
       </div>
@@ -23,27 +23,27 @@ export default function RecentFundingsPage() {
         {recentFundedLoans.map((item) => (
           <div key={item.id} className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition-all space-y-4 flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="flex justify-between items-center text-xs font-extrabold">
-                <span className="text-slate-500 font-bold">{item.loanType}</span>
+              <div className="flex justify-between items-center text-[13px] font-extrabold">
+                <span className="text-[#738fc6] font-bold">{item.loanType}</span>
                 <span className="text-emerald-600 font-extrabold">{item.turnaroundDays}</span>
               </div>
 
-              <h2 className="text-xl font-extrabold text-slate-900">{item.title}</h2>
-              <div className="text-3xl font-black text-amber-600">{item.monthlySavings}</div>
+              <h2 className="text-[19px] sm:text-[20px] font-heading font-extrabold text-[#0d101d]">{item.title}</h2>
+              <div className="text-[28px] sm:text-[32px] font-heading font-black text-[#f39c0a]">{item.monthlySavings}</div>
               
-              <div className="pt-2 text-xs text-slate-500 font-medium border-t border-slate-100 flex justify-between">
+              <div className="pt-2 text-[13px] text-slate-500 font-medium border-t border-slate-100 flex justify-between">
                 <span>Location: {item.cityState}</span>
                 <span>Amount: {item.loanAmount}</span>
               </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100">
+              <p className="text-[14px] text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100">
                 "{item.story}"
               </p>
             </div>
 
             <Link
               to="/contact"
-              className="block w-full py-3 text-center text-xs font-bold uppercase tracking-wider text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-md mt-4"
+              className="block w-full py-3 text-center text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0d101d] bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] rounded-xl transition-all shadow-md mt-4"
             >
               Get Matching Rate Quote
             </Link>
@@ -52,25 +52,25 @@ export default function RecentFundingsPage() {
       </div>
 
       {/* Verified Borrower Reviews Grid */}
-      <section className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl mb-16">
+      <section className="bg-[#0d1629] text-white rounded-3xl p-8 sm:p-12 border border-[#1d3465] shadow-xl mb-16">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <h2 className="text-3xl font-black text-white">What Our Clients Say</h2>
+          <h2 className="text-[24px] sm:text-[28px] font-heading font-black text-white">What Our Clients Say</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
-            <div key={t.id} className="bg-slate-850 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <div key={t.id} className="bg-[#0d101d] p-6 rounded-2xl border border-[#1d3465] space-y-4">
               <div className="flex items-center gap-3">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-xs ${t.bgColor}`}>
                   {t.initials}
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white">{t.author}</div>
-                  <div className="text-[11px] text-slate-400">{t.role}</div>
+                  <div className="text-[15px] font-bold text-white">{t.author}</div>
+                  <div className="text-[12px] text-[#738fc6]">{t.role}</div>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-300 italic leading-relaxed">
+              <p className="text-[14px] text-[#738fc6] italic leading-relaxed">
                 "{t.quote}"
               </p>
             </div>
@@ -79,9 +79,9 @@ export default function RecentFundingsPage() {
       </section>
 
       {/* Bottom CTA */}
-      <div className="text-center bg-white border border-slate-200 rounded-3xl p-10 max-w-3xl mx-auto shadow-sm">
-        <h3 className="text-2xl font-black text-slate-900">Ready to start your home purchase or refinance?</h3>
-        <Link to="/contact" className="inline-block mt-6 px-8 py-4 bg-amber-500 text-slate-950 text-xs font-extrabold uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-amber-500/20">
+      <div className="text-center bg-white border border-slate-200 rounded-3xl p-10 max-w-2xl mx-auto shadow-sm space-y-3">
+        <h3 className="text-[22px] sm:text-[24px] font-heading font-black text-[#0d101d]">Ready to start your home purchase or refinance?</h3>
+        <Link to="/contact" className="inline-block mt-4 px-8 py-4 bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] text-[#0d101d] text-xs sm:text-sm font-black uppercase tracking-wider rounded-xl transition-all shadow-lg shadow-[#f39c0a]/20">
           Start Pre-Approval Inquiry
         </Link>
       </div>

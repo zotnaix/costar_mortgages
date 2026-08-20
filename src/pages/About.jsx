@@ -34,13 +34,13 @@ export default function AboutPage(){
   ]
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-12">
+    <main className="max-w-7xl mx-auto px-6 py-12 font-body text-base">
       {/* Hero Header */}
-      <section className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+      <section className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black text-[#0d101d] tracking-tight leading-tight">
           About Co Star Mortgages
         </h1>
-        <p className="mt-2 text-base sm:text-lg text-slate-600 leading-relaxed">
+        <p className="mt-2 text-base text-slate-600 leading-relaxed">
           Friendly guidance, clear rate options, and 20+ years of Colorado real estate experience.
         </p>
       </section>
@@ -51,7 +51,7 @@ export default function AboutPage(){
           {/* Left Column: Broker Bio & Contact Details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-5">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden bg-slate-950 border-2 border-amber-500/40 shadow-xl shrink-0 relative flex items-center justify-center">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden bg-[#0d101d] border-2 border-[#1d3465] shadow-xl shrink-0 relative flex items-center justify-center">
                 <img 
                   src="/media/profile_pic.jpg" 
                   alt={siteConfig.brokerName}
@@ -59,13 +59,13 @@ export default function AboutPage(){
                 />
               </div>
               <div>
-                <h2 className="text-2xl font-black text-slate-900">{siteConfig.brokerName}</h2>
-                <div className="text-xs font-bold text-amber-600 mt-1">Licensed Mortgage Broker</div>
-                <div className="text-xs text-slate-500">NMLS Unique ID: {siteConfig.nmlsId}</div>
+                <h2 className="text-[22px] sm:text-[24px] font-heading font-black text-[#0d101d]">{siteConfig.brokerName}</h2>
+                <div className="text-[13px] font-bold text-[#f39c0a] mt-1">Licensed Mortgage Broker</div>
+                <div className="text-[13px] text-slate-500 font-semibold">NMLS Unique ID: {siteConfig.nmlsId}</div>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-[14px]">
               <div className="text-slate-600 font-medium">📍 {siteConfig.contact.fullAddress}</div>
               <div className="text-slate-600 font-medium">📞 {siteConfig.contact.phone}</div>
               <div className="text-slate-600 font-medium">✉️ {siteConfig.contact.email}</div>
@@ -76,7 +76,7 @@ export default function AboutPage(){
                 href={siteConfig.socials.brokerNearMe}
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2"
+                className="px-5 py-3 bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] text-[#0d101d] text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-sm flex items-center gap-2"
               >
                 <span>BNM</span>
                 <span>BrokerNearMe Profile ↗</span>
@@ -88,23 +88,23 @@ export default function AboutPage(){
           <div className="lg:col-span-7 space-y-6">
             {/* Get to know me Card */}
             <div className="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 shadow-sm space-y-3">
-              <h3 className="text-xl font-extrabold text-slate-900">Get to know me</h3>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+              <h3 className="text-[19px] sm:text-[20px] font-heading font-extrabold text-[#0d101d]">Get to know me</h3>
+              <p className="text-[15px] sm:text-base text-slate-700 leading-relaxed font-normal">
                 "With 20+ years in Colorado real estate investing and 5+ years as a licensed mortgage broker, I take pride in providing personal care, clear communication, and tailored loan solutions for every client."
               </p>
             </div>
 
             {/* My experience Card */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-slate-950 text-white border border-slate-800 shadow-xl space-y-4">
-              <h3 className="text-xl font-extrabold text-amber-400">My Experience &amp; Loan Products</h3>
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#0d1629] text-white border border-[#1d3465] shadow-xl space-y-4">
+              <h3 className="text-[19px] sm:text-[20px] font-heading font-extrabold text-[#fac536]">My Experience &amp; Loan Products</h3>
               
               <div>
-                <span className="text-xs font-bold text-slate-400 block mb-2">Supported Loan Products:</span>
+                <span className="text-[13px] font-bold text-[#738fc6] block mb-2">Supported Loan Products:</span>
                 <div className="flex flex-wrap gap-2">
                   {brokerProducts.map((prod, idx) => (
                     <span 
                       key={idx}
-                      className="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 text-slate-200 border border-slate-700 hover:border-amber-500/50 transition-colors"
+                      className="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#0d101d] text-slate-200 border border-[#1d3465] hover:border-[#f39c0a] transition-colors"
                     >
                       {prod}
                     </span>
@@ -112,14 +112,14 @@ export default function AboutPage(){
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-slate-800 grid grid-cols-2 gap-4 text-xs">
+              <div className="pt-3 border-t border-[#1d3465] grid grid-cols-2 gap-4 text-xs">
                 <div>
-                  <span className="text-slate-400 block">Mortgage Broker Experience:</span>
-                  <span className="text-lg font-black text-amber-400">5+ Years</span>
+                  <span className="text-[#738fc6] block">Mortgage Broker Experience:</span>
+                  <span className="text-lg font-heading font-black text-[#fac536]">5+ Years</span>
                 </div>
                 <div>
-                  <span className="text-slate-400 block">Real Estate Investing:</span>
-                  <span className="text-lg font-black text-white">20+ Years</span>
+                  <span className="text-[#738fc6] block">Real Estate Investing:</span>
+                  <span className="text-lg font-heading font-black text-white">20+ Years</span>
                 </div>
               </div>
             </div>
@@ -130,15 +130,15 @@ export default function AboutPage(){
       {/* Pillars Section */}
       <section className="mb-20">
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="text-3xl font-black text-slate-900">Why Work With Co Star Mortgages</h2>
+          <h2 className="text-[26px] sm:text-[32px] font-heading font-black text-[#0d101d]">Why Work With Co Star Mortgages</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((v) => (
             <div key={v.number} className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all relative">
-              <div className="text-4xl font-black text-amber-500/30 mb-4">{v.number}</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{v.title}</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">{v.description}</p>
+              <div className="text-4xl font-heading font-black text-[#f39c0a]/30 mb-4">{v.number}</div>
+              <h3 className="text-[19px] font-heading font-bold text-[#0d101d] mb-3">{v.title}</h3>
+              <p className="text-[14px] text-slate-600 leading-relaxed">{v.description}</p>
             </div>
           ))}
         </div>
@@ -146,14 +146,14 @@ export default function AboutPage(){
 
       {/* Mission Card */}
       <section className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-20">
-        <div className="max-w-3xl mx-auto space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Our Mission</h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+        <div className="max-w-2xl mx-auto space-y-4 text-center">
+          <h2 className="text-[24px] sm:text-[28px] font-heading font-black text-[#0d101d]">Our Mission</h2>
+          <p className="text-base text-slate-600 leading-relaxed">
             Co Star Mortgages makes home financing simple, transparent, and stress-free. Whether you're purchasing or refinancing, we provide clear loan options and personal support every step of the way.
           </p>
 
-          <div className="pt-2 flex flex-wrap gap-4 items-center">
-            <Link to="/contact" className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl text-xs font-bold uppercase tracking-wider transition-all shadow-md">
+          <div className="pt-2 flex flex-wrap gap-4 items-center justify-center">
+            <Link to="/contact" className="px-7 py-3.5 bg-gradient-to-r from-[#fac536] via-[#f39c0a] to-[#d97707] hover:from-[#fabe22] hover:to-[#fac536] text-[#0d101d] rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all shadow-md">
               Connect With Us
             </Link>
           </div>

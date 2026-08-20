@@ -17,8 +17,6 @@ export default function MortgageProgramDetailPage() {
 
       {/* Program Header Banner */}
       <section className="bg-[#0d1629] text-white rounded-3xl p-8 sm:p-12 border border-[#1d3465] shadow-xl mb-10 relative overflow-hidden">
-        <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-[#fac536]/10 rounded-full blur-3xl pointer-events-none"></div>
-
         <div className="relative z-10 max-w-3xl">
           <h1 className="text-[28px] sm:text-[36px] lg:text-[44px] font-heading font-black tracking-tight text-white leading-tight mb-4">
             {program.title}

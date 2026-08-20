@@ -18,10 +18,6 @@ export default function Home() {
       />
       {/* HERO SECTION WITH 40/60 SPLIT FOR CALCULATOR */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-[#0d101d] text-white overflow-hidden pt-24 pb-16">
-        {/* Subtle Background Glows */}
-        <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#fac536]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#1d3465]/35 rounded-full blur-3xl pointer-events-none"></div>
-
         <div className="relative max-w-7xl mx-auto px-6 z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Hero Headline (40% Split: lg:col-span-5) */}
@@ -246,10 +242,6 @@ export default function Home() {
 
       {/* FINAL CALL TO ACTION BANNER */}
       <section className="bg-[#0d101d] text-white py-20 relative overflow-hidden">
-        {/* Glow Accents */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#fac536]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#1d3465]/35 rounded-full blur-3xl pointer-events-none"></div>
-
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="bg-[#0d1629] rounded-3xl p-8 sm:p-14 border border-[#1d3465] shadow-2xl text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f39c0a]/10 border border-[#f39c0a]/30 text-[#fac536] text-xs font-bold uppercase tracking-wider">
